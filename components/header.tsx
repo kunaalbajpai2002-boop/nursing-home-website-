@@ -21,7 +21,7 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50">
       {/* Sub-header / Top Bar */}
       <div className="bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-10 text-sm">
             {/* Left: Hours */}
             <div className="hidden sm:flex items-center gap-2 opacity-90">
@@ -58,7 +58,7 @@ export default function Header() {
 
       {/* Main Header */}
       <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">

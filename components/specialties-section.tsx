@@ -12,8 +12,8 @@ const specialties = [
 
 export default function SpecialtiesSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-blue-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-10 px-3 sm:px-4 lg:px-6 bg-gradient-to-br from-indigo-50 to-blue-50">
+      <div className="max-w-[1500px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">Our Specialties</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

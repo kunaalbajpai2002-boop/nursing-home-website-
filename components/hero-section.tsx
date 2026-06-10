@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-26 min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative pt-22 min-h-[85vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -15,7 +15,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div className="relative max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6 py-14 w-full">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
             <Heart size={16} className="text-red-300" />

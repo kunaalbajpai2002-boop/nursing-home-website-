@@ -8,8 +8,8 @@ export default function Empanelment() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-20 pb-8 px-3 sm:px-4 lg:px-6">
+        <div className="max-w-[1100px] mx-auto">
           <h1 className="text-5xl font-bold text-foreground mb-8">Our Empanelment</h1>
           
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">

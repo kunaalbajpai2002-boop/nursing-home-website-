@@ -29,7 +29,25 @@ const specialties = [
     image: "/specialities/neurology.jpg",
     title: "Neurology",
   },
+  {
+    image: "/specialities/pediatrics.jpg",
+    title: "Pediatrics",
+  },
+  {
+    image: "/specialities/dentistry.jpg",
+    title: "Dental Care",
+  },
+  {
+    image: "/specialities/dermatology.jpg",
+    title: "Dermatology",
+  },
+  {
+    image: "/specialities/urology.jpg",
+    title: "Urology",
+  },
 ];
+
+
 
 export default function FeaturesSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -46,8 +64,8 @@ export default function FeaturesSection() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 bg-slate-100 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 bg-slate-100 relative overflow-hidden">
+      <div className="w-full px-2">
 
         {/* Heading */}
         <div className="text-center mb-12">
@@ -68,7 +86,20 @@ export default function FeaturesSection() {
           {/* Left Arrow */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 bg-green-500 text-white p-3 rounded"
+            className="
+                          absolute
+                          left-2
+                          md:-left-5
+                          top-1/2
+                          -translate-y-1/2
+                         z-20
+                         bg-green-500
+                         text-white
+                         p-2
+                        md:p-3
+                        rounded-full
+                        shadow-lg
+                        "
           >
             <ChevronLeft />
           </button>
@@ -78,14 +109,20 @@ export default function FeaturesSection() {
               {specialties.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_33.333%] min-w-0 px-4"
+                  className="
+                            flex-[0_0_100%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0
+                            px-3
+                            "
                 >
-                  <div className="bg-white shadow-lg overflow-hidden">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
 
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
                     <div className="p-6">
@@ -110,7 +147,20 @@ export default function FeaturesSection() {
           {/* Right Arrow */}
           <button
             onClick={scrollNext}
-            className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 bg-green-500 text-white p-3 rounded"
+            className="
+                    absolute
+                    right-2
+                    md:-right-5
+                    top-1/2
+                   -translate-y-1/2
+                    z-20
+                     bg-green-500
+                    text-white
+                     p-2
+                    md:p-3
+                   rounded-full
+                   shadow-lg
+                   "
           >
             <ChevronRight />
           </button>

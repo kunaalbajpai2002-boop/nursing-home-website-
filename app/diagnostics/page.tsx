@@ -9,8 +9,8 @@ export default function Diagnostics() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-20 pb-8 px-3 sm:px-4 lg:px-6">
+        <div className="max-w-[1350px] mx-auto">
           <h1 className="text-5xl font-bold text-foreground mb-4">Diagnostics & Testing</h1>
           <p className="text-xl text-muted-foreground mb-12">
             Advanced diagnostic services to ensure accurate health assessment and timely intervention.
