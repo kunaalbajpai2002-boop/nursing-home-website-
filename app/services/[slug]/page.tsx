@@ -1,0 +1,430 @@
+'use client';
+
+import React, { useState } from 'react';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import Link from 'next/link';
+import { ArrowLeft, CheckCircle, Calendar, ShieldCheck, HeartPulse, Clock } from 'lucide-react';
+
+const serviceData: Record<string, {
+  title: string;
+  tagline: string;
+  image: string;
+  description: string;
+  facilities: string[];
+  benefits: string[];
+  faqs: { q: string; a: string }[];
+}> = {
+  anesthesiology: {
+    title: 'Anesthesiology',
+    tagline: 'Ensuring Pain-Free, Secure, and Compassionate Surgical Care',
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Anesthesiology department provides state-of-the-art anesthesia care, centering on patient comfort, safety, and rapid recovery. From diagnostic consultations to complex operations, our anesthesiologists supervise every step of your surgical journey.',
+    facilities: [
+      'Pre-anesthesia checkups and consultation',
+      'Advanced general and regional anesthesia techniques',
+      'State-of-the-art vitals monitoring systems',
+      'Specialized post-anesthesia recovery units (PACU)',
+      'Acute pain management services'
+    ],
+    benefits: [
+      '100% safety record with certified senior anesthesiologists',
+      'Minimally invasive regional blocks to reduce systemic medication',
+      'Personalized recovery plans targeting minimal downtime'
+    ],
+    faqs: [
+      {
+        q: 'Is it necessary to fast before anesthesia?',
+        a: 'Yes, fasting is critical to prevent complications during surgery. Generally, no solid food is allowed for 6 hours prior, and clear fluids must stop 2 hours prior.'
+      },
+      {
+        q: 'How long does regional anesthesia last?',
+        a: 'Regional blocks typically last between 4 to 24 hours depending on the specific anesthetic used, offering continuous pain control post-surgery.'
+      }
+    ]
+  },
+  cardiology: {
+    title: 'Cardiology (Non-Invasive)',
+    tagline: 'Comprehensive Cardiac Diagnostic Solutions For A Healthy Heart',
+    image: 'https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Non-Invasive Cardiology unit utilizes cutting-edge medical diagnostics to assess and manage heart diseases. We focus on preventive screening, rapid diagnosis, and detailed outpatient management schemes.',
+    facilities: [
+      '2D/3D Echocardiography & Color Doppler',
+      'Treadmill Testing (TMT) and Stress Tests',
+      '24-hour Holter monitoring and Ambulatory BP checks',
+      'Preventive cardiac health screening packages',
+      'Pediatric and adult cardiac consultations'
+    ],
+    benefits: [
+      'Early detection of silent cardiovascular risks',
+      'Completely non-invasive procedures with zero discomfort',
+      'Highly trained cardiologists interpreting patient data'
+    ],
+    faqs: [
+      {
+        q: 'What should I wear for a Treadmill Test (TMT)?',
+        a: 'Wear comfortable, loose clothing and running shoes. Avoid large meals or caffeine at least 3 hours before the test.'
+      },
+      {
+        q: 'How long does a standard echocardiogram take?',
+        a: 'A standard echo test takes roughly 30 to 45 minutes and is completely painless.'
+      }
+    ]
+  },
+  'critical-care': {
+    title: 'Critical Care',
+    tagline: 'Round-the-Clock Intensive Support for Critical Patient Needs',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'The Critical Care Unit at CareHub is built to handle severe illnesses, post-surgical recovery complications, and medical emergencies. Supported by our 24/7 staff, our ICU stands ready to deliver prompt, life-saving therapies.',
+    facilities: [
+      'Advanced ventilators and respiratory therapy systems',
+      'Dedicated 1:1 nurse-to-patient care ratio for severe cases',
+      'Continuous hemodynamics and cardiac output monitors',
+      'Sterile, climate-controlled intensive care unit (ICU)',
+      'Instant access to pathology labs and diagnostic imaging'
+    ],
+    benefits: [
+      'Emergency response team active 24 hours a day',
+      'Zero compromise on sterilization and infection control protocols',
+      'Highly qualified intensive care specialists (intensivists) on-site'
+    ],
+    faqs: [
+      {
+        q: 'What are the visiting hours for the Critical Care Unit?',
+        a: 'To maintain a quiet and sterile environment, visits are restricted. Usually, visits are permitted from 11:00 AM - 12:00 PM and 5:00 PM - 6:00 PM.'
+      },
+      {
+        q: 'How is patient comfort managed in the ICU?',
+        a: 'We use continuous sedation monitoring and specialized air-mattresses to alleviate pain and prevent secondary issues like pressure sores.'
+      }
+    ]
+  },
+  'dental-care': {
+    title: 'Dental Care',
+    tagline: 'Restoring Healthy Smiles with Advanced Dental Technologies',
+    image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'We offer comprehensive dental services ranging from preventive care to cosmetic dentistry. Our focus is on maintaining long-term oral hygiene and functional teeth, particularly optimized for senior and geriatric needs.',
+    facilities: [
+      'Digital RVG X-ray diagnostics',
+      'Advanced root canal treatments (RCT)',
+      'Dental implants, crowns, and bridges',
+      'Custom geriatric dentures and denture care',
+      'Oral scaling, polishing, and cosmetic whitening'
+    ],
+    benefits: [
+      'Pain-free dental procedures with modern equipment',
+      'Customized geriatric care plans targeting comfortable chewing',
+      'Strict sterilization standards meeting ISO certifications'
+    ],
+    faqs: [
+      {
+        q: 'How often should seniors visit the dentist?',
+        a: 'Seniors should visit the dentist at least twice a year to check for gum issues, fitment of dentures, and early signs of oral diseases.'
+      },
+      {
+        q: 'What is the lifespan of custom dentures?',
+        a: 'With proper cleaning and care, quality dentures last between 5 to 7 years before needing adjustments.'
+      }
+    ]
+  },
+  dermatology: {
+    title: 'Dermatology',
+    tagline: 'Clinical and Cosmetic Skincare Solutions Tailored to You',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Dermatology department treats conditions affecting the skin, hair, and nails. We combine medical expertise with aesthetic therapy to offer diagnostic testing, medical management, and minor cosmetic enhancements.',
+    facilities: [
+      'Chronic eczema, acne, and psoriasis management',
+      'Skin allergy patch testing',
+      'Minor clinical surgeries (cyst and mole removal)',
+      'Geriatric skin dryness and irritation management',
+      'Anti-aging and cosmetic skincare plans'
+    ],
+    benefits: [
+      'Board-certified clinical dermatologists',
+      'Advanced FDA-approved diagnostic equipment',
+      'Structured long-term management programs for chronic eczema'
+    ],
+    faqs: [
+      {
+        q: 'Are minor mole removals painful?',
+        a: 'No, we apply local numbing creams or injections so the entire procedure is completely painless.'
+      },
+      {
+        q: 'How can seniors prevent severe dry skin?',
+        a: 'Use lukewarm water for baths, apply heavy medical moisturizers within 3 minutes of bathing, and keep hydrated.'
+      }
+    ]
+  },
+  physiotherapy: {
+    title: 'Physiotherapy & Rehab',
+    tagline: 'Reclaiming Mobility and Strength Through Custom Rehabilitation',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Physiotherapy and Rehabilitation division helps patients recover physical mobility, manage chronic pain, and recover after major bone or muscle surgeries. We offer tailored physical coaching.',
+    facilities: [
+      'Post-operative orthopedic rehabilitation',
+      'Ultrasonic, shortwave diathermy, and laser therapy',
+      'Post-stroke and cardiac rehab therapy',
+      'Osteoarthritis and back pain management clinics',
+      'Balance and fall-prevention training for seniors'
+    ],
+    benefits: [
+      'Dedicated personalized physical therapy coaches',
+      'State-of-the-art gym equipment for rehabilitation',
+      'Continuous progress mapping and balance assessments'
+    ],
+    faqs: [
+      {
+        q: 'How many sessions of physiotherapy will I need?',
+        a: 'The sessions vary. A mild joint strain might require 3-5 sessions, while stroke or post-surgical rehab can span 4-12 weeks.'
+      },
+      {
+        q: 'Do you offer home-based physiotherapy services?',
+        a: 'Yes, we have specialized physiotherapists who can visit your home for patients facing extreme mobility challenges.'
+      }
+    ]
+  }
+};
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default function ServiceDetail({ params }: PageProps) {
+  const resolvedParams = React.use(params);
+  const slug = resolvedParams.slug;
+  const service = serviceData[slug] || serviceData.cardiology; // Fallback to cardiology
+
+  // Booking Form State
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    date: '',
+    time: '',
+    message: ''
+  });
+  const [isBooked, setIsBooked] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone || !formData.date) {
+      alert('Please fill in Name, Phone Number, and Date.');
+      return;
+    }
+    setIsBooked(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50/50 flex flex-col">
+      <Header />
+
+      {/* Main Container */}
+      <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1500px] mx-auto">
+          
+          {/* Back Button */}
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-[#d81b47] font-semibold text-sm sm:text-base mb-8 transition-colors select-none group"
+          >
+            <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
+            Back to Services
+          </Link>
+
+          {/* Department Header Banner */}
+          <div className="relative rounded-2xl overflow-hidden shadow-md mb-12 h-64 sm:h-80 md:h-[400px]">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1e2f41]/90 via-[#1e2f41]/70 to-transparent" />
+            
+            {/* Banner Text overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 md:px-16 max-w-3xl text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+                {service.title}
+              </h1>
+              <p className="text-pink-300 font-semibold text-base sm:text-lg md:text-xl mt-3 tracking-wide">
+                {service.tagline}
+              </p>
+            </div>
+          </div>
+
+          {/* Split Detail Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            {/* Left Column - Detailed Copy */}
+            <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-sm space-y-10">
+              
+              {/* Description */}
+              <div>
+                <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">
+                  <HeartPulse className="text-[#d81b47]" size={24} />
+                  Department Overview
+                </h2>
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                  {service.description}
+                </p>
+              </div>
+
+              {/* Core Offerings / Facilities */}
+              <div>
+                <h2 className="text-2xl font-bold text-[#1e2f41] mb-6 flex items-center gap-2.5">
+                  <Clock className="text-[#d81b47]" size={24} />
+                  Facilities & Services
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {service.facilities.map((fac, idx) => (
+                    <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                      <span className="w-2.5 h-2.5 bg-[#8cb069] rounded-full mt-1.5 flex-shrink-0"></span>
+                      <span className="text-slate-700 text-sm sm:text-base font-medium leading-normal">{fac}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Benefits */}
+              <div>
+                <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">
+                  <ShieldCheck className="text-[#d81b47]" size={24} />
+                  Why Choose Us?
+                </h2>
+                <ul className="space-y-3">
+                  {service.benefits.map((ben, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-slate-600 leading-relaxed text-sm sm:text-base">
+                      <CheckCircle size={18} className="text-[#8cb069] mt-1 flex-shrink-0" />
+                      <span>{ben}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* FAQs */}
+              {service.faqs.length > 0 && (
+                <div className="pt-6 border-t border-slate-100">
+                  <h2 className="text-2xl font-bold text-[#1e2f41] mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-6">
+                    {service.faqs.map((faq, idx) => (
+                      <div key={idx} className="space-y-2">
+                        <h4 className="font-bold text-[#1e2f41] text-base sm:text-lg">Q. {faq.q}</h4>
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base pl-5 border-l-2 border-slate-200">
+                          {faq.a}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
+
+            {/* Right Column - Booking Card */}
+            <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm lg:sticky lg:top-28">
+              
+              {!isBooked ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
+                    <Calendar className="text-[#d81b47]" size={22} />
+                    <h3 className="text-xl font-bold text-[#1e2f41]">Book Consultation</h3>
+                  </div>
+
+                  {/* Name */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Your Name *</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. John Doe"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone Number *</label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="e.g. +91 98765 43210"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+
+                  {/* Date & Time Grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Date *</label>
+                      <input
+                        type="date"
+                        required
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#d81b47] transition-all"
+                        value={formData.date}
+                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Pref. Time</label>
+                      <input
+                        type="time"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#d81b47] transition-all"
+                        value={formData.time}
+                        onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Additional Notes</label>
+                    <textarea
+                      rows={3}
+                      placeholder="Describe any symptoms or requests..."
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all resize-none"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-[#d81b47] hover:bg-[#b01338] text-white font-bold text-sm tracking-wide rounded-lg shadow-sm hover:shadow transition-all duration-300 select-none cursor-pointer"
+                  >
+                    Confirm Booking
+                  </button>
+                </form>
+              ) : (
+                <div className="py-8 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mb-6 border border-emerald-100 shadow-inner">
+                    <CheckCircle size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1e2f41] mb-2">Booking Confirmed!</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed max-w-xs mb-8">
+                    Thank you, <span className="font-semibold text-slate-700">{formData.name}</span>. Our representative will contact you shortly on <span className="font-semibold text-slate-700">{formData.phone}</span> to confirm your appointment.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setIsBooked(false);
+                      setFormData({ name: '', phone: '', date: '', time: '', message: '' });
+                    }}
+                    className="py-2.5 px-6 border border-slate-200 hover:bg-slate-50 text-slate-600 rounded-lg text-sm font-semibold transition-colors"
+                  >
+                    Book Another
+                  </button>
+                </div>
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
