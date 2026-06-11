@@ -66,7 +66,7 @@ export default function Header() {
                 <span className="text-white font-bold text-lg">CH</span>
               </div>
               <span className="font-bold text-primary text-xl hidden sm:inline tracking-tight group-hover:text-accent transition-colors duration-300">
-                CareHub
+                Aggarwal nursing Home
               </span>
             </Link>
 

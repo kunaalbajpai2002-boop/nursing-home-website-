@@ -11,7 +11,7 @@ export default function About() {
       {/* Main Content Area */}
       <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
         <div className="max-w-[1500px] mx-auto space-y-24 sm:space-y-32">
-          
+
           {/* About Us Section */}
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Image Column */}
@@ -35,22 +35,22 @@ export default function About() {
               <h1 className="text-3xl sm:text-4xl font-extrabold text-[#1e2f41] mb-6 leading-tight tracking-tight uppercase">
                 A Trusted Healthcare Facility, Providing the Best Medical Services.
               </h1>
-              
+
               <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  Jeewan Hospital 1 is a reputable healthcare institution with super-Specialities wards and cutting-edge medical equipment to ensure that all patients are treated completely, effectively, and on time.
+                  Aggarwal Nursing Home is a reputable healthcare institution with super-Specialities wards and cutting-edge medical equipment to ensure that all patients are treated completely, effectively, and on time.
                 </p>
                 <p>
-                  We have been providing medical and healthcare services for almost 100 years, treating generations of patients. Jeewan Hospital 1 is a center of excellence, with the greatest doctors and medical practitioners in the country. We offer the most up-to-date medical equipment and apparatus for rapid diagnosis and treatment of ailments.
+                  We have been providing medical and healthcare services for almost 100 years, treating generations of patients. Aggarwal Nursing Home is a center of excellence, with the greatest doctors and medical practitioners in the country. We offer the most up-to-date medical equipment and apparatus for rapid diagnosis and treatment of ailments.
                 </p>
                 <p>
                   The availability of testing facilities on hospital grounds guarantees that patients receive immediate lab reports and findings, relieving them and providing a hassle-free experience.
                 </p>
                 <p>
-                  Jeewan Hospital 1 represents the pinnacle of trust and compassion. We treat our patients like family members. Our doctors, medical team, technicians, and other staff members are always accessible to assist patients in any manner possible. We ensure that our patients always receive the greatest medical care and services. We ensure that all of our patients leave with complete satisfaction and a grin on their faces.
+                  Aggarwal Nursing Home represents the pinnacle of trust and compassion. We treat our patients like family members. Our doctors, medical team, technicians, and other staff members are always accessible to assist patients in any manner possible. We ensure that our patients always receive the greatest medical care and services. We ensure that all of our patients leave with complete satisfaction and a grin on their faces.
                 </p>
                 <p>
-                  When it comes to infrastructure and hygiene, we make sure that hygiene is not compromised. Our hospital premises are Cleaned numerous times every day to eliminate the chance of disease transmission. Jeewan Hospital 1 features all The latest equipment, including digital X-ray and CT Scan, ECG, EEG, Echo, TMT, Holter and ABPM.
+                  When it comes to infrastructure and hygiene, we make sure that hygiene is not compromised. Our hospital premises are Cleaned numerous times every day to eliminate the chance of disease transmission. Aggarwal Nursing Home features all The latest equipment, including digital X-ray and CT Scan, ECG, EEG, Echo, TMT, Holter and ABPM.
                 </p>
               </div>
             </div>
@@ -67,10 +67,10 @@ export default function About() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e2f41] mb-6 leading-tight tracking-tight uppercase">
                 To Be the Region's Most Trusted and Compassionate Care Provider.
               </h2>
-              
+
               <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  At CareHub, we envision a future where senior years are filled with joy, health, and dignity. We strive to pioneer new standards in geriatric care, incorporating advanced medical research, customized therapies, and a nurturing environment to ensure a fulfilling experience for our residents.
+                  At Aggarwal Nursing Home , we envision a future where senior years are filled with joy, health, and dignity. We strive to pioneer new standards in geriatric care, incorporating advanced medical research, customized therapies, and a nurturing environment to ensure a fulfilling experience for our residents.
                 </p>
                 <p>
                   We are dedicated to building a community that values the wisdom of elders, providing them with top-tier amenities and round-the-clock medical attention. Our goal is to expand our footprint while maintaining the boutique, high-touch quality of care that makes our residents feel at home.
@@ -117,7 +117,7 @@ export default function About() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e2f41] mb-6 leading-tight tracking-tight uppercase">
                 Delivering Compassionate Care & Advanced Health Services Daily.
               </h2>
-              
+
               <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
                   Our mission is to offer comprehensive healthcare services that address the physical, emotional, and social needs of seniors. Through our team of dedicated medical professionals and state-of-the-art facilities, we guarantee specialized care plans that promote independent living and recovery.

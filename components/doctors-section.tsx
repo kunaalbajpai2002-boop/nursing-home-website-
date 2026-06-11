@@ -54,7 +54,7 @@ export default function DoctorsSection() {
               <div className="relative w-64 h-64 sm:w-60 sm:h-60 md:w-64 md:h-64 rounded-full flex items-center justify-center p-2.5 transition-all duration-300">
                 {/* Dashed Border Overlay */}
                 <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#b8c9b3]/80 group-hover:border-[#d81b47] group-hover:rotate-12 transition-all duration-500 pointer-events-none" />
-                
+
                 {/* Red/Pink Numeric Badge */}
                 <div className="absolute top-2 right-4 w-9 h-9 rounded-full bg-[#d81b47] text-white flex items-center justify-center text-sm font-bold shadow-md z-10 transition-transform duration-300 group-hover:scale-110">
                   {doc.id}
