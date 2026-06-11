@@ -41,10 +41,48 @@ const services = [
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600&h=400',
     description: 'Custom rehabilitation and physical therapy programs designed to restore mobility, alleviate pain, and speed up post-surgical recovery processes.',
   },
+  {
+    slug: 'Onco-Surgery',
+    title: 'Onco Surgery',
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Expert administration of anesthesia for surgical procedures, focusing on patient safety, pain management, and personalized care during the perioperative period.',
+
+  },
+  {
+    slug: 'ophthalmology',
+    title: 'Ophthalmology',
+    image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Comprehensive eye care services including vision assessment, cataract management, glaucoma treatment, retinal evaluations, and preventive eye health care.',
+  },
+  {
+    slug: 'obstetrics-gynecology',
+    title: 'Obstetrics & Gynecology',
+    image: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Specialized healthcare services for women including pregnancy care, childbirth support, gynecological consultations, and preventive health screenings.',
+  },
+  {
+    slug: 'respiratory-medicine',
+    title: 'Respiratory Medicine',
+    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Expert diagnosis and treatment of respiratory disorders including asthma, COPD, lung infections, sleep-related breathing disorders, and chronic respiratory conditions.',
+  },
+  {
+    slug: 'pediatric-neonatology',
+    title: 'Pediatric Neonatology',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Dedicated healthcare for newborns, infants, children, and adolescents, including neonatal intensive care, developmental monitoring, and preventive pediatric services.',
+  },
+  {
+    slug: 'general-medicine-emergency-geriatrics',
+    title: 'General Medicine, Emergency Medicine & Geriatrics',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600&h=400',
+    description: 'Comprehensive medical care covering routine health concerns, emergency treatment, chronic disease management, and specialized geriatric healthcare services.',
+  },
 ];
 
 export default function Services() {
   return (
+
     <div className="min-h-screen bg-slate-50/50 flex flex-col">
       <Header />
 
@@ -66,8 +104,8 @@ export default function Services() {
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
             {services.map((service) => (
-              <div 
-                key={service.slug} 
+              <div
+                key={service.slug}
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col group"
               >
                 {/* Card Image */}
@@ -85,7 +123,7 @@ export default function Services() {
                   <h3 className="text-xl font-bold text-[#1e2f41] tracking-tight min-h-[56px] flex items-center justify-center">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-sm text-slate-500 line-clamp-3 mt-2 leading-relaxed mb-6">
                     {service.description}
                   </p>

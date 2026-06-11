@@ -182,7 +182,188 @@ const serviceData: Record<string, {
         a: 'Yes, we have specialized physiotherapists who can visit your home for patients facing extreme mobility challenges.'
       }
     ]
-  }
+  },
+
+  'onco-surgery': {
+    title: 'Onco Surgery',
+    tagline: 'Advanced Surgical Care for Cancer Treatment',
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+
+    description:
+      'Onco Surgery focuses on the surgical management of cancer. Our team uses advanced techniques to remove tumors safely while preserving maximum healthy tissue and improving patient outcomes.',
+
+    facilities: [
+      'Cancer diagnosis and surgical evaluation',
+      'Tumor removal surgeries',
+      'Minimally invasive oncological procedures',
+      'Post-surgery cancer care',
+      'Multidisciplinary tumor board consultation'
+    ],
+
+    benefits: [
+      'Expert oncology surgeons',
+      'Advanced surgical technology',
+      'Personalized cancer treatment plans'
+    ],
+
+    faqs: [
+      {
+        q: 'Is surgery always required for cancer treatment?',
+        a: 'No, treatment depends on cancer type and stage. Surgery is one of several treatment options.'
+      },
+      {
+        q: 'How long is recovery after onco surgery?',
+        a: 'Recovery varies depending on the type of surgery and patient condition.'
+      }
+    ]
+  },
+
+  ophthalmology: {
+    title: 'Ophthalmology',
+    tagline: 'Advanced Eye Care for Better Vision and Healthy Eyes',
+    image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&q=80&w=800&h=500',
+    description:
+      'Our Ophthalmology department provides comprehensive eye care including diagnosis, treatment, and surgical management of eye disorders with advanced technology.',
+
+    facilities: [
+      'Vision testing and eye screening',
+      'Cataract and glaucoma evaluation',
+      'Retinal disease management',
+      'Diabetic eye care screening',
+      'Prescription and corrective lenses guidance'
+    ],
+
+    benefits: [
+      'Early detection of vision problems',
+      'Advanced diagnostic imaging tools',
+      'Expert ophthalmologists'
+    ],
+
+    faqs: [
+      {
+        q: 'How often should I get my eyes checked?',
+        a: 'Adults should have a full eye exam every 1–2 years depending on age and risk factors.'
+      }
+    ]
+  },
+
+  'obstetrics-gynecology': {
+    title: 'Obstetrics & Gynecology',
+    tagline: 'Complete Women’s Health and Pregnancy Care',
+    image: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800&h=500',
+    description:
+      'We provide complete care for women including pregnancy management, childbirth, fertility care, and gynecological treatments.',
+
+    facilities: [
+      'Pregnancy monitoring and delivery care',
+      'High-risk pregnancy management',
+      'Fertility consultation',
+      'Menstrual disorder treatment',
+      'Gynecological surgeries'
+    ],
+
+    benefits: [
+      'Experienced gynecologists',
+      'Safe maternity care',
+      'Advanced fetal monitoring'
+    ],
+
+    faqs: [
+      {
+        q: 'When should I first visit during pregnancy?',
+        a: 'As soon as pregnancy is confirmed or within the first 8 weeks.'
+      }
+    ]
+  },
+
+  'respiratory-medicine': {
+    title: 'Respiratory Medicine',
+    tagline: 'Expert Care for Lung and Breathing Disorders',
+    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&q=80&w=800&h=500',
+    description:
+      'We diagnose and treat diseases affecting the lungs and respiratory system including chronic and acute conditions.',
+
+    facilities: [
+      'Asthma and COPD management',
+      'Lung function testing',
+      'Sleep apnea diagnosis',
+      'Chest infection treatment',
+      'Pulmonary rehabilitation'
+    ],
+
+    benefits: [
+      'Advanced lung testing equipment',
+      'Specialized respiratory care team',
+      'Long-term disease management'
+    ],
+
+    faqs: [
+      {
+        q: 'Can asthma be completely cured?',
+        a: 'Asthma cannot be cured but can be effectively controlled with treatment.'
+      }
+    ]
+  },
+
+  'pediatric-neonatology': {
+    title: 'Pediatric Neonatology',
+    tagline: 'Specialized Care for Newborns and Children',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800&h=500',
+    description:
+      'We provide specialized medical care for newborns, infants, and children including intensive neonatal support.',
+
+    facilities: [
+      'NICU (Neonatal Intensive Care Unit)',
+      'Premature baby care',
+      'Child development monitoring',
+      'Vaccination programs',
+      'Pediatric emergency care'
+    ],
+
+    benefits: [
+      'Expert pediatricians',
+      'Advanced NICU support',
+      'Child-friendly environment'
+    ],
+
+    faqs: [
+      {
+        q: 'When should newborns first visit a doctor?',
+        a: 'Usually within 3–5 days after birth for initial assessment.'
+      }
+    ]
+  },
+
+  'general-medicine-emergency-geriatrics': {
+    title: 'General Medicine, Emergency & Geriatrics',
+    tagline: 'Complete Healthcare for All Ages & Emergencies',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=500',
+    description:
+      'Comprehensive care covering routine illnesses, emergency treatments, and specialized elderly care.',
+
+    facilities: [
+      '24/7 emergency care',
+      'Chronic disease management',
+      'Geriatric health care',
+      'Infection treatment',
+      'Preventive health checkups'
+    ],
+
+    benefits: [
+      'Round-the-clock doctors',
+      'Fast emergency response',
+      'Senior citizen care programs'
+    ],
+
+    faqs: [
+      {
+        q: 'Do you provide emergency services 24/7?',
+        a: 'Yes, emergency care is available round the clock.'
+      }
+    ]
+  },
+
+
 };
 
 interface PageProps {
@@ -220,7 +401,7 @@ export default function ServiceDetail({ params }: PageProps) {
       {/* Main Container */}
       <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1500px] mx-auto">
-          
+
           {/* Back Button */}
           <Link
             href="/services"
@@ -238,7 +419,7 @@ export default function ServiceDetail({ params }: PageProps) {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1e2f41]/90 via-[#1e2f41]/70 to-transparent" />
-            
+
             {/* Banner Text overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 md:px-16 max-w-3xl text-white">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -252,10 +433,10 @@ export default function ServiceDetail({ params }: PageProps) {
 
           {/* Split Detail Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Left Column - Detailed Copy */}
             <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-sm space-y-10">
-              
+
               {/* Description */}
               <div>
                 <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">
@@ -320,7 +501,7 @@ export default function ServiceDetail({ params }: PageProps) {
 
             {/* Right Column - Booking Card */}
             <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm lg:sticky lg:top-28">
-              
+
               {!isBooked ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
