@@ -2,10 +2,30 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Phone, Calendar, AlertTriangle, Clock } from 'lucide-react';
+import { Menu, X, Phone, Calendar, AlertTriangle, Clock, ChevronDown, FlaskConical } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLabOpen, setIsLabOpen] = useState(false);
+
+  const labTests = [
+    { name: 'Amylase Test', slug: 'amylase-test' },
+    { name: 'Blood Glucose Test', slug: 'blood-glucose-test' },
+    { name: 'Blood Urea Nitrogen (BUN)', slug: 'blood-urea-nitrogen' },
+    { name: 'Blood Chemistry Panel', slug: 'blood-chemistry-panel' },
+    { name: 'Chest X-Ray', slug: 'chest-x-ray' },
+    { name: 'Coagulation Profile (PT/INR)', slug: 'coagulation-profile' },
+    { name: 'Complete Blood Count (CBC)', slug: 'complete-blood-count' },
+    { name: 'Electrocardiogram (ECG)', slug: 'electrocardiogram' },
+    { name: 'HbA1c (Glycated Hemoglobin)', slug: 'hba1c-test' },
+    { name: 'Kidney Function Test (KFT)', slug: 'kidney-function-test' },
+    { name: 'Lipid Profile (Cholesterol)', slug: 'lipid-profile' },
+    { name: 'Liver Function Test (LFT)', slug: 'liver-function-test' },
+    { name: 'Thyroid Function Test (TFT)', slug: 'thyroid-function-test' },
+    { name: 'Ultrasound Imaging', slug: 'ultrasound-imaging' },
+    { name: 'Urine Analysis', slug: 'urine-analysis' },
+    { name: 'Vitamin D & B12 Test', slug: 'vitamin-test' },
+  ];
 
   const navLinks = [
     { label: 'Home', href: '/' },
@@ -81,6 +101,45 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Lab Tests Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsLabOpen(true)}
+                onMouseLeave={() => setIsLabOpen(false)}
+              >
+                <button
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary rounded-md transition-all duration-300 hover:bg-primary/5 cursor-pointer"
+                >
+                  <FlaskConical size={16} className="text-primary animate-pulse" />
+                  <span>Lab Tests A-Z</span>
+                  <ChevronDown size={14} className={`transition-transform duration-300 ${isLabOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu */}
+                <div
+                  className={`absolute right-0 top-full w-[450px] bg-white border border-slate-200 shadow-xl rounded-xl p-4 grid grid-cols-2 gap-x-4 gap-y-2 transition-all duration-300 origin-top-right z-50 ${
+                    isLabOpen 
+                      ? 'opacity-100 scale-100 translate-y-2 pointer-events-auto' 
+                      : 'opacity-0 scale-95 translate-y-0 pointer-events-none'
+                  }`}
+                >
+                  <div className="col-span-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 pb-1 border-b border-slate-100 flex items-center gap-2">
+                    <FlaskConical size={14} className="text-[#d81b47]" />
+                    Lab Diagnoses Catalog (A-Z)
+                  </div>
+                  {labTests.map((test) => (
+                    <Link
+                      key={test.slug}
+                      href={`/diagnostics/${test.slug}`}
+                      className="text-xs font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-colors leading-relaxed block"
+                      onClick={() => setIsLabOpen(false)}
+                    >
+                      {test.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -96,7 +155,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[85vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
             }`}
         >
           <nav className="px-4 pb-4 pt-2 border-t border-border/50 space-y-1">
@@ -110,6 +169,37 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Collapsible Lab Tests for Mobile */}
+            <div className="border-t border-slate-100 pt-2 mt-2">
+              <button
+                onClick={() => setIsLabOpen(!isLabOpen)}
+                className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-foreground/80 hover:text-primary cursor-pointer"
+              >
+                <span className="flex items-center gap-2">
+                  <FlaskConical size={16} className="text-primary" />
+                  Lab Tests A-Z
+                </span>
+                <ChevronDown size={14} className={`transition-transform duration-200 ${isLabOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`overflow-hidden transition-all duration-300 ${isLabOpen ? 'max-h-[350px] overflow-y-auto pl-4 py-1 space-y-1' : 'max-h-0'}`}>
+                {labTests.map((test) => (
+                  <Link
+                    key={test.slug}
+                    href={`/diagnostics/${test.slug}`}
+                    className="block px-4 py-2 text-xs font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 rounded-lg"
+                    onClick={() => {
+                      setIsLabOpen(false);
+                      setIsOpen(false);
+                    }}
+                  >
+                    {test.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <div className="pt-3 mt-2 border-t border-border/50 flex flex-col gap-2">
               <Link
                 href="/contact"

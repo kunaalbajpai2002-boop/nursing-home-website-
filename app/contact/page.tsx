@@ -48,7 +48,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder=""
                     className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     required
                   />
@@ -60,7 +60,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder=""
                     className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     required
                   />
@@ -72,7 +72,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="(555) 123-4567"
+                    placeholder=""
                     className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -106,8 +106,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">(555) 123-4567</p>
-                    <p className="text-muted-foreground">(555) 987-6543</p>
+                    <p className="text-muted-foreground">(+91) 9266610335</p>
+                    <p className="text-muted-foreground">(011) 27282308</p>
+                    <p className="text-muted-foreground">(011) 27282408</p>
                   </div>
                 </div>
               </div>
@@ -119,8 +120,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@carehub.com</p>
-                    <p className="text-muted-foreground">admissions@carehub.com</p>
+                    <p className="text-muted-foreground">aggarwalnursinghomenarela@gmail.com</p>
+                    {/* <p className="text-muted-foreground">admissions@carehub.com</p> */}
                   </div>
                 </div>
               </div>
@@ -132,8 +133,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Address</h3>
-                    <p className="text-muted-foreground">123 Care Avenue</p>
-                    <p className="text-muted-foreground">Health City, HC 12345</p>
+                    <p className="text-muted-foreground"> U-150, Aggarwal Nursing Home Wali Gali</p>
+                    <p className="text-muted-foreground">Vijay Nagar , Narela , Delhi-110040</p>
                   </div>
                 </div>
               </div>

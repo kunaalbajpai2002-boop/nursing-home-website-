@@ -2,6 +2,7 @@
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import Link from 'next/link';
 import { Microscope, Beaker, Activity, Users } from 'lucide-react';
 
 export default function Diagnostics() {
@@ -54,25 +55,31 @@ export default function Diagnostics() {
 
           <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg p-8">
             <h2 className="text-3xl font-bold text-foreground mb-6">Available Tests</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
               {[
-                'Complete Blood Count',
-                'Blood Chemistry Panel',
-                'Thyroid Function Tests',
-                'Liver Function Tests',
-                'Kidney Function Tests',
-                'Lipid Profile',
-                'Blood Glucose Testing',
-                'Electrocardiogram (ECG)',
-                'Chest X-Ray',
-                'Ultrasound Imaging',
-                'Coagulation Profile',
-                'Urine Analysis',
+                { name: 'Complete Blood Count', slug: 'complete-blood-count' },
+                { name: 'Blood Chemistry Panel', slug: 'blood-chemistry-panel' },
+                { name: 'Thyroid Function Tests', slug: 'thyroid-function-test' },
+                { name: 'Liver Function Tests', slug: 'liver-function-test' },
+                { name: 'Kidney Function Tests', slug: 'kidney-function-test' },
+                { name: 'Lipid Profile', slug: 'lipid-profile' },
+                { name: 'Blood Glucose Testing', slug: 'blood-glucose-test' },
+                { name: 'Electrocardiogram (ECG)', slug: 'electrocardiogram' },
+                { name: 'Chest X-Ray', slug: 'chest-x-ray' },
+                { name: 'Ultrasound Imaging', slug: 'ultrasound-imaging' },
+                { name: 'Coagulation Profile', slug: 'coagulation-profile' },
+                { name: 'Urine Analysis', slug: 'urine-analysis' },
               ].map((test, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span className="text-foreground font-medium">{test}</span>
-                </div>
+                <Link 
+                  key={index} 
+                  href={`/diagnostics/${test.slug}`}
+                  className="flex items-center gap-3 group/item py-1 select-none"
+                >
+                  <span className="w-2.5 h-2.5 bg-primary rounded-full transition-transform group-hover/item:scale-125 group-hover/item:bg-[#d81b47]" />
+                  <span className="text-foreground font-semibold hover:text-[#d81b47] transition-colors">
+                    {test.name}
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

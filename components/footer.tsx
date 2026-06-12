@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-foreground text-card mt-16">
-      <div className="max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6 py-8">
+      <div className="w-full px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">CH</span>
               </div>
-              CareHub
+              Aggarwal Nursing Home
             </h3>
             <p className="text-sm text-gray-300">
               Dedicated to providing compassionate, professional nursing care with state-of-the-art facilities and highly trained healthcare professionals.
@@ -36,22 +36,22 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-primary" />
-                <span>(555) 123-4567</span>
+                <span>(+91)92666-10335</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-primary" />
-                <span>info@carehub.com</span>
+                <span>aggarwalnursinghomenarela@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={16} className="text-primary" />
-                <span>123 Care Avenue, Health City, HC 12345</span>
+                <span>U-150 Vijay Nagar , Narela , Near Narela Bus Stand , Delhi-110040</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
-          <p>&copy; 2024 CareHub Nursing Home. All rights reserved.</p>
+          <p>&copy; 2026 Aggarwal Nursing Home . All Right Reserved . Developed by AI Vantage Tech Services</p>
         </div>
       </div>
     </footer>
