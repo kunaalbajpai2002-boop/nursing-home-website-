@@ -4,16 +4,16 @@ import React, { useState } from 'react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import Link from 'next/link';
-import { 
-  ArrowLeft, 
-  CheckCircle, 
-  Calendar, 
-  Award, 
-  Clock, 
-  HeartPulse, 
-  Languages, 
-  GraduationCap, 
-  Briefcase 
+import {
+  ArrowLeft,
+  CheckCircle,
+  Calendar,
+  Award,
+  Clock,
+  HeartPulse,
+  Languages,
+  GraduationCap,
+  Briefcase
 } from 'lucide-react';
 
 interface DoctorInfo {
@@ -31,12 +31,12 @@ interface DoctorInfo {
 
 const doctorsData: Record<string, DoctorInfo> = {
   '01': {
-    name: 'Dr. A. K. Agarwal',
+    name: 'Dr. Aditya Aggarwal',
     designation: 'Senior Consultant & Director',
     image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MD (Internal Medicine), FCCP',
+    qualifications: 'MBBS, MD (Internal Medicine)',
     experience: '35+ Years of Clinical Excellence',
-    bio: 'Dr. A. K. Agarwal is a legendary physician with over three and a half decades of experience in internal medicine and critical care. As the Director of CareHub Nursing Home, he has dedicated his life to senior health management, geriatric rehabilitation, and multi-system chronic disease treatments.',
+    bio: 'Dr. Aditya Aggarwal is a legendary physician with over three and a half decades of experience in internal medicine and critical care. As the Director of CareHub Nursing Home, he has dedicated his life to senior health management, geriatric rehabilitation, and multi-system chronic disease treatments.',
     expertise: [
       'Geriatric Care & Senior Health Management',
       'Chronic Disease Management (Diabetes, Hypertension)',
@@ -47,22 +47,22 @@ const doctorsData: Record<string, DoctorInfo> = {
     languages: ['English', 'Hindi'],
     faqs: [
       {
-        q: 'Does Dr. A. K. Agarwal treat emergency cases?',
+        q: 'Does Dr. Aditya Aggarwal treat emergency cases?',
         a: 'Yes, as the Senior Consultant and Director, he oversees emergency admissions and handles critical internal medicine referrals.'
       },
       {
         q: 'How do I schedule a follow-up consultation?',
-        a: 'You can book through the online portal, or contact the front desk directly. Regular follow-ups are typically scheduled on weekday mornings.'
+        a: 'You can book through the online portal, or contact  front desk directly. Regular follow-ups are typically scheduled on weekday mornings.'
       }
     ]
   },
   '02': {
-    name: 'Dr. Veena Agarwal',
+    name: 'Dr. Manju Aggarwal',
     designation: 'Gynaecologist & Obstetrician',
     image: 'https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MS (Obstetrics & Gynaecology)',
+    qualifications: 'MBBS, PCDMCH(Obstetrics & Gynaecology)',
     experience: '30+ Years of Dedication',
-    bio: 'Dr. Veena Agarwal is a leading gynaecologist and fertility expert specializing in women\'s health throughout all life stages. Her compassionate approach to reproductive health, post-menopausal care, and geriatric gynaecology has made her a highly trusted healthcare professional in the region.',
+    bio: 'Dr. Manju Aggarwal is a leading gynaecologist and fertility expert specializing in women\'s health throughout all life stages. Her compassionate approach to reproductive health, post-menopausal care, and geriatric gynaecology has made her a highly trusted healthcare professional in the region.',
     expertise: [
       'High-Risk Pregnancy Care & Deliveries',
       'Infertility & Reproductive Health Services',
@@ -83,12 +83,12 @@ const doctorsData: Record<string, DoctorInfo> = {
     ]
   },
   '03': {
-    name: 'Dr. Saurabh Agarwal',
-    designation: 'Cardiologist',
+    name: 'Dr. Sonali Aggarwal',
+    designation: 'Gynaecologist & Obstetrician',
     image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MD (Medicine), DM (Cardiology), FACC',
+    qualifications: 'MBBS, MD (Obstetrics & Gynaecology)',
     experience: '12+ Years of Expertise',
-    bio: 'Dr. Saurabh Agarwal is a dynamic cardiologist committed to preventive cardiology and advanced non-invasive cardiac diagnostics. He is dedicated to helping patients prevent, manage, and recover from complex cardiovascular conditions through lifestyle modifications and modern medical treatments.',
+    bio: 'Dr. Sonali Aggarwal is a dynamic gynaecologist committed to preventive cardiology and advanced non-invasive cardiac diagnostics. He is dedicated to helping patients prevent, manage, and recover from complex cardiovascular conditions through lifestyle modifications and modern medical treatments.',
     expertise: [
       'Echocardiography (2D/3D Echo) & Color Doppler',
       'Treadmill Testing (TMT) & Stress Assays',
@@ -99,7 +99,7 @@ const doctorsData: Record<string, DoctorInfo> = {
     languages: ['English', 'Hindi'],
     faqs: [
       {
-        q: 'What tests does Dr. Saurabh Agarwal perform in-house?',
+        q: 'What tests does Dr. Sonali Aggarwal perform in-house?',
         a: 'He performs Echocardiography (Echo), Treadmill Tests (TMT), Holter Monitoring, and ambulatory blood pressure evaluations directly in our diagnostic wing.'
       },
       {
@@ -108,32 +108,32 @@ const doctorsData: Record<string, DoctorInfo> = {
       }
     ]
   },
-  '04': {
-    name: 'Dr. Ritu Agarwal',
-    designation: 'Paediatrician',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MD (Paediatrics), Fellowship in Neonatology',
-    experience: '10+ Years of Warm Care',
-    bio: 'Dr. Ritu Agarwal is a gentle and caring paediatrician and neonatologist. She specializes in newborn care, developmental assessments, childhood vaccinations, and managing acute and chronic paediatric illnesses, ensuring the health and happiness of children from infancy through adolescence.',
-    expertise: [
-      'Neonatal Intensive Care & Newborn Resuscitation',
-      'Childhood Immunization & Vaccine Counseling',
-      'Pediatric Asthma, Allergies, & Chronic Care',
-      'Developmental Milestones & Nutrition Assessments'
-    ],
-    timings: 'Mon – Sat: 10:00 AM – 1:00 PM, 5:00 PM – 7:00 PM',
-    languages: ['English', 'Hindi'],
-    faqs: [
-      {
-        q: 'Can I follow up via telephone in case of minor concerns?',
-        a: 'Yes, for established patients, brief follow-ups or clarifications on dosage can be guided via our nursing line, but major symptoms require physical assessment.'
-      },
-      {
-        q: 'Do you offer a vaccination calendar?',
-        a: 'Yes, we provide and manage the complete national and international vaccination schedule for infants and growing children.'
-      }
-    ]
-  }
+  //  '04': {
+  //     name: 'Dr. Ritu Agarwal',
+  //     designation: 'Paediatrician',
+  //     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600',
+  //     qualifications: 'MBBS, MD (Paediatrics), Fellowship in Neonatology',
+  //     experience: '10+ Years of Warm Care',
+  //     bio: 'Dr. Ritu Agarwal is a gentle and caring paediatrician and neonatologist. She specializes in newborn care, developmental assessments, childhood vaccinations, and managing acute and chronic paediatric illnesses, ensuring the health and happiness of children from infancy through adolescence.',
+  //     expertise: [
+  //       'Neonatal Intensive Care & Newborn Resuscitation',
+  //       'Childhood Immunization & Vaccine Counseling',
+  //       'Pediatric Asthma, Allergies, & Chronic Care',
+  //       'Developmental Milestones & Nutrition Assessments'
+  //     ],
+  //     timings: 'Mon – Sat: 10:00 AM – 1:00 PM, 5:00 PM – 7:00 PM',
+  //     languages: ['English', 'Hindi'],
+  //     faqs: [
+  //       {
+  //         q: 'Can I follow up via telephone in case of minor concerns?',
+  //         a: 'Yes, for established patients, brief follow-ups or clarifications on dosage can be guided via our nursing line, but major symptoms require physical assessment.'
+  //       },
+  //       {
+  //         q: 'Do you offer a vaccination calendar?',
+  //         a: 'Yes, we provide and manage the complete national and international vaccination schedule for infants and growing children.'
+  //       }
+  //     ]
+  //   }
 };
 
 interface PageProps {
@@ -143,7 +143,7 @@ interface PageProps {
 export default function DoctorDetail({ params }: PageProps) {
   const resolvedParams = React.use(params);
   const id = resolvedParams.id;
-  
+
   // Find doctor or fallback to the first one (Dr. A. K. Agarwal)
   const doctor = doctorsData[id] || doctorsData['01'];
 
@@ -173,7 +173,7 @@ export default function DoctorDetail({ params }: PageProps) {
       {/* Main Content Area */}
       <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1500px] mx-auto">
-          
+
           {/* Back Button */}
           <Link
             href="/"
@@ -185,13 +185,13 @@ export default function DoctorDetail({ params }: PageProps) {
 
           {/* Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Left Column: Picture, Key Stats, Booking Card */}
             <div className="lg:col-span-4 space-y-8">
-              
+
               {/* Doctor Quick Profile Card */}
               <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col items-center text-center">
-                
+
                 {/* Circular Portrait Frame */}
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full flex items-center justify-center p-2 border-2 border-dashed border-[#b8c9b3]/80 mb-6">
                   <div className="w-full h-full rounded-full overflow-hidden aspect-square border border-slate-100 shadow-inner">
@@ -214,7 +214,7 @@ export default function DoctorDetail({ params }: PageProps) {
 
                 {/* Quick Info Grid */}
                 <div className="w-full space-y-4 text-left">
-                  
+
                   {/* Experience */}
                   <div className="flex gap-3">
                     <Award className="text-[#d81b47] flex-shrink-0 mt-0.5" size={18} />
@@ -349,7 +349,7 @@ export default function DoctorDetail({ params }: PageProps) {
 
             {/* Right Column: Detailed Biography, Expertise, FAQs */}
             <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-sm space-y-10">
-              
+
               {/* Doctor Bio */}
               <div>
                 <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">

@@ -5,28 +5,28 @@ import Link from 'next/link';
 const doctors = [
   {
     id: '01',
-    name: 'Dr. A. K. Agarwal',
+    name: 'Dr. Aditya Aggarwal',
     designation: 'Senior Consultant & Director',
     image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600',
   },
   {
     id: '02',
-    name: 'Dr. Veena Agarwal',
+    name: 'Dr. Manju Aggarwal',
     designation: 'Gynaecologist & Obstetrician',
     image: 'https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=600&h=600',
   },
   {
     id: '03',
-    name: 'Dr. Saurabh Agarwal',
-    designation: 'Cardiologist',
+    name: 'Dr. Sonali Aggarwal',
+    designation: 'Gynaecologist & Obstetriciant',
     image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=600',
   },
-  {
-    id: '04',
-    name: 'Dr. Ritu Agarwal',
-    designation: 'Paediatrician',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600',
-  },
+  // {
+  //   id: '04',
+  //   name: 'Dr. Ritu Agarwal',
+  //   designation: 'Paediatrician',
+  //   image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600',
+  // },
 ];
 
 export default function DoctorsSection() {
@@ -49,7 +49,7 @@ export default function DoctorsSection() {
         </div>
 
         {/* Doctors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 xl:gap-10">
           {doctors.map((doc) => (
             <div key={doc.id} className="flex flex-col items-center text-center group">
               {/* Circular Frame Container */}

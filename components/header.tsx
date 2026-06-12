@@ -69,7 +69,7 @@ export default function Header() {
                 <AlertTriangle size={14} className="text-red-300 animate-pulse" />
                 <span>Emergency:</span>
                 <Phone size={14} />
-                <span>+91 123-456-7890</span>
+                <span>(+91) 9266610335</span>
               </a>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Header() {
               ))}
 
               {/* Lab Tests Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsLabOpen(true)}
                 onMouseLeave={() => setIsLabOpen(false)}
@@ -118,11 +118,10 @@ export default function Header() {
 
                 {/* Dropdown Menu */}
                 <div
-                  className={`absolute right-0 top-full w-[450px] bg-white border border-slate-200 shadow-xl rounded-xl p-4 grid grid-cols-2 gap-x-4 gap-y-2 transition-all duration-300 origin-top-right z-50 ${
-                    isLabOpen 
-                      ? 'opacity-100 scale-100 translate-y-2 pointer-events-auto' 
-                      : 'opacity-0 scale-95 translate-y-0 pointer-events-none'
-                  }`}
+                  className={`absolute right-0 top-full w-[450px] bg-white border border-slate-200 shadow-xl rounded-xl p-4 grid grid-cols-2 gap-x-4 gap-y-2 transition-all duration-300 origin-top-right z-50 ${isLabOpen
+                    ? 'opacity-100 scale-100 translate-y-2 pointer-events-auto'
+                    : 'opacity-0 scale-95 translate-y-0 pointer-events-none'
+                    }`}
                 >
                   <div className="col-span-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 pb-1 border-b border-slate-100 flex items-center gap-2">
                     <FlaskConical size={14} className="text-[#d81b47]" />
@@ -182,7 +181,7 @@ export default function Header() {
                 </span>
                 <ChevronDown size={14} className={`transition-transform duration-200 ${isLabOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               <div className={`overflow-hidden transition-all duration-300 ${isLabOpen ? 'max-h-[350px] overflow-y-auto pl-4 py-1 space-y-1' : 'max-h-0'}`}>
                 {labTests.map((test) => (
                   <Link
