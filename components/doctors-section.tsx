@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 const doctors = [
   {
     id: '01',
@@ -61,18 +63,20 @@ export default function DoctorsSection() {
                 </div>
 
                 {/* Inner Image Mask */}
-                <div className="w-full h-full rounded-full overflow-hidden aspect-square border border-slate-100 shadow-sm">
+                <Link href={`/doctors/${doc.id}`} className="w-full h-full rounded-full overflow-hidden aspect-square border border-slate-100 shadow-sm block cursor-pointer">
                   <img
                     src={doc.image}
                     alt={doc.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                </Link>
               </div>
 
               {/* Text Metadata */}
               <h3 className="text-xl font-bold text-[#1e2f41] mt-6 transition-colors duration-300 group-hover:text-[#d81b47]">
-                {doc.name}
+                <Link href={`/doctors/${doc.id}`} className="hover:underline">
+                  {doc.name}
+                </Link>
               </h3>
               <p className="text-sm font-medium text-muted-foreground mt-1.5">
                 {doc.designation}

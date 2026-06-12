@@ -362,7 +362,126 @@ const serviceData: Record<string, {
       }
     ]
   },
-
+  'plastic-surgery': {
+    title: 'Plastic & Reconstructive Surgery',
+    tagline: 'Restoring Form, Function, and Confidence',
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Plastic & Reconstructive Surgery department offers a wide spectrum of restorative, aesthetic, and reconstructive services. From post-trauma reconstruction to advanced cosmetic procedures, our skilled surgeons use the latest techniques to prioritize safety, precision, and patient satisfaction.',
+    facilities: [
+      'Reconstructive microsurgery',
+      'Post-burn scar revision',
+      'Cosmetic facial and body contouring',
+      'Hand and maxillofacial surgery',
+      'Advanced wound healing therapies'
+    ],
+    benefits: [
+      'Highly experienced certified plastic surgeons',
+      'State-of-the-art sterile operating theaters',
+      'Comprehensive post-operative recovery support'
+    ],
+    faqs: [
+      {
+        q: 'How long is the recovery period for cosmetic surgery?',
+        a: 'Recovery times depend entirely on the procedure. Minor procedures may take a few days, while major surgeries can require 2-6 weeks of rest.'
+      }
+    ]
+  },
+  'infertility-treatment': {
+    title: 'Infertility Treatment',
+    tagline: 'Supporting Your Journey to Parenthood',
+    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Infertility and Reproductive Medicine department provides comprehensive diagnostic services and state-of-the-art treatment options for couples seeking to start a family. We combine advanced clinical science with compassionate care to guide you through every step of this journey.',
+    facilities: [
+      'Advanced fertility evaluation for couples',
+      'Ovulation induction and tracking',
+      'Intrauterine Insemination (IUI)',
+      'Semen analysis and preparation',
+      'Counseling and psychological support'
+    ],
+    benefits: [
+      'High success rates with tailored treatments',
+      'Compassionate and confidential care environments',
+      'Experienced reproductive endocrinologists and gynecologists'
+    ],
+    faqs: [
+      {
+        q: 'When should we consult a fertility specialist?',
+        a: 'We recommend consulting a specialist if you have been trying to conceive for over a year (or six months if the female partner is over 35).'
+      }
+    ]
+  },
+  'orthopedic-care': {
+    title: 'Orthopedic Care',
+    tagline: 'Restoring Joint Health, Mobility, and Vitality',
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Orthopedics department provides expert care for disorders of the bones, joints, ligaments, tendons, and muscles. From treating sports injuries to performing advanced joint replacement surgeries, we help patients of all ages regain pain-free mobility.',
+    facilities: [
+      'Joint replacement therapies (hip and knee)',
+      'Arthroscopic sports medicine',
+      'Fracture and trauma management',
+      'Osteoporosis screening and bone health clinics',
+      'Rheumatology and arthritis management'
+    ],
+    benefits: [
+      'Expert orthopedic surgeons and physical therapists',
+      'Advanced minimally invasive surgical options',
+      'Integrated rehabilitation and physiotherapy pipelines'
+    ],
+    faqs: [
+      {
+        q: 'What is the recovery time for a total knee replacement?',
+        a: 'Most patients start walking with assistance within 24 hours. Full return to normal, low-impact daily activities usually takes 4 to 6 weeks.'
+      }
+    ]
+  },
+  'neurology': {
+    title: 'Neurology',
+    tagline: 'Advanced Care for the Brain, Spine, and Nervous System',
+    image: 'https://images.unsplash.com/photo-1559757175-7b315e3406a7?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'The Neurology department specializes in diagnosing and treating complex disorders of the central and peripheral nervous systems. We offer advanced diagnostic investigations and personalized management programs for acute and chronic neurological conditions.',
+    facilities: [
+      'Stroke identification and post-stroke management',
+      'Comprehensive epilepsy care clinics',
+      'Movement disorders and Parkinson\'s disease care',
+      'Electromyography (EMG) and nerve conduction studies',
+      'Headache and chronic pain management'
+    ],
+    benefits: [
+      'Experienced board-certified neurologists',
+      'Sophisticated neuro-diagnostic technologies',
+      'Care coordination for neurological rehabilitation'
+    ],
+    faqs: [
+      {
+        q: 'What are common signs of neurological issues?',
+        a: 'Symptoms include persistent headaches, numbness, muscle weakness, coordination issues, unexplained dizziness, and memory lapses.'
+      }
+    ]
+  },
+  'urology': {
+    title: 'Urology',
+    tagline: 'Specialized Care for Renal and Genitourinary Health',
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Urology department offers comprehensive medical and surgical solutions for disorders of the kidneys, urinary bladder, ureters, and male reproductive organs. We focus on minimally invasive procedures and modern therapies to treat infections, stones, and oncology cases.',
+    facilities: [
+      'Kidney stone management (laser lithotripsy)',
+      'Prostate disorder treatments',
+      'Urinary tract infection (UTI) clinics',
+      'Uro-oncology evaluations',
+      'Incontinence and bladder health programs'
+    ],
+    benefits: [
+      'Certified senior urologists on panel',
+      'Minimally invasive keyhole and laser procedures',
+      'Rapid diagnostic evaluations and quick recovery timelines'
+    ],
+    faqs: [
+      {
+        q: 'How can I prevent kidney stones?',
+        a: 'Stay well-hydrated by drinking at least 2.5 to 3 liters of water daily, reduce sodium intake, and maintain a balanced diet.'
+      }
+    ]
+  }
 
 };
 

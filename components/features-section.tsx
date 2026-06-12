@@ -3,47 +3,58 @@
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const specialties = [
   {
     image: "/specialities/plastic-surgery.jpg",
     title: "Plastic Surgery",
+    slug: "plastic-surgery",
   },
   {
     image: "/specialities/infertility.jpg",
     title: "Infertility Treatment",
+    slug: "infertility-treatment",
   },
   {
     image: "/specialities/physiotherapy.jpg",
     title: "Physiotherapy",
+    slug: "physiotherapy",
   },
   {
     image: "/specialities/cardiology.jpg",
     title: "Cardiology",
+    slug: "cardiology",
   },
   {
     image: "/specialities/orthopedic.jpg",
     title: "Orthopedic Care",
+    slug: "orthopedic-care",
   },
   {
     image: "/specialities/neurology.jpg",
     title: "Neurology",
+    slug: "neurology",
   },
   {
     image: "/specialities/pediatrics.jpg",
     title: "Pediatrics",
+    slug: "pediatric-neonatology",
   },
   {
     image: "/specialities/dentistry.jpg",
     title: "Dental Care",
+    slug: "dental-care",
   },
   {
     image: "/specialities/dermatology.jpg",
     title: "Dermatology",
+    slug: "dermatology",
   },
   {
     image: "/specialities/urology.jpg",
     title: "Urology",
+    slug: "urology",
   },
 ];
 
@@ -119,11 +130,13 @@ export default function FeaturesSection() {
                 >
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
 
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    <Link href={`/services/${item.slug}`} className="block overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </Link>
 
                     <div className="p-6">
                       <span className="bg-green-500 text-white px-4 py-2 text-sm font-semibold">
@@ -131,12 +144,14 @@ export default function FeaturesSection() {
                       </span>
 
                       <h3 className="text-2xl font-bold mt-6 mb-4">
-                        {item.title}
+                        <Link href={`/services/${item.slug}`} className="hover:text-green-600 transition-colors">
+                          {item.title}
+                        </Link>
                       </h3>
 
-                      <button className="font-semibold text-gray-700 hover:text-green-600">
+                      <Link href={`/services/${item.slug}`} className="font-semibold text-gray-700 hover:text-green-600 inline-block transition-colors">
                         Read More →
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
