@@ -75,7 +75,7 @@ export default function FeaturesSection() {
   }, [emblaApi]);
 
   return (
-    <section className="py-12 bg-slate-100 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center py-24 bg-slate-100 relative overflow-hidden">
       <div className="w-full px-2">
 
         {/* Heading */}

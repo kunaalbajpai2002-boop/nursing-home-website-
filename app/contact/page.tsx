@@ -26,11 +26,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <section className="pt-20 pb-8 px-3 sm:px-4 lg:px-6">
-        <div className="max-w-[1350px] mx-auto">
+      <main className="flex-grow pt-28 pb-12 px-3 sm:px-4 lg:px-6 flex items-center">
+        <div className="max-w-[1350px] mx-auto w-full">
           <h1 className="text-5xl font-bold text-foreground mb-4">Contact Us</h1>
           <p className="text-xl text-muted-foreground mb-12">
             Get in touch with us for inquiries, tours, or to discuss care options.
@@ -154,7 +154,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

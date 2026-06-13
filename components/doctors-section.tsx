@@ -31,7 +31,7 @@ const doctors = [
 
 export default function DoctorsSection() {
   return (
-    <section className="py-20 px-3 sm:px-4 lg:px-6 bg-white">
+    <section className="min-h-screen flex flex-col justify-center py-24 px-3 sm:px-4 lg:px-6 bg-white">
       <div className="max-w-[1500px] mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-16">

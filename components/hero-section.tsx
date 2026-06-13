@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-26 min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative h-screen pt-20 flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -44,12 +44,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" className="w-full h-auto fill-white">
-          <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,60 L0,60 Z" />
-        </svg>
-      </div>
+      {/* Decorative bottom line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
     </section>
   );
 }

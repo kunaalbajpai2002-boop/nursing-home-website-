@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Calendar, AlertTriangle, Clock, ChevronDown, FlaskConical } from 'lucide-react';
 
 export default function Header() {
@@ -37,54 +37,30 @@ export default function Header() {
     { label: 'Contact', href: '/contact' },
   ];
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
-    <header className="fixed top-0 w-full z-50">
-      {/* Sub-header / Top Bar */}
-      <div className="bg-primary text-primary-foreground">
-        <div className="max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="flex items-center justify-between h-10 text-sm">
-            {/* Left: Hours */}
-            <div className="hidden sm:flex items-center gap-2 opacity-90">
-              <Clock size={14} />
-              <span>Mon – Sat: 8:00 AM – 8:00 PM</span>
-            </div>
-
-            {/* Right: Appointment & Emergency */}
-            <div className="flex items-center gap-6 ml-auto">
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                <Calendar size={14} />
-                <span className="hidden xs:inline">Schedule Appointment</span>
-                <span className="xs:hidden">Appointment</span>
-              </Link>
-
-              <div className="w-px h-4 bg-primary-foreground/30" />
-
-              <a
-                href="tel:+911234567890"
-                className="flex items-center gap-2 font-semibold hover:opacity-80 transition-opacity"
-              >
-                <AlertTriangle size={14} className="text-red-300 animate-pulse" />
-                <span>Emergency:</span>
-                <Phone size={14} />
-                <span>(+91) 9266610335</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-border/50">
-        <div className="max-w-[1500px] mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full">
+      {/* Header Bar */}
+      <div className="w-full h-20 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm px-4">
+        <div className="max-w-[1500px] mx-auto h-full flex items-center justify-between relative">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                <span className="text-white font-bold text-lg">CH</span>
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Aggarwal Nursing Home Logo"
+                className="h-14 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105"
+              />
               <span className="font-bold text-primary text-xl hidden sm:inline tracking-tight group-hover:text-accent transition-colors duration-300">
                 Aggarwal nursing Home
               </span>
@@ -144,7 +120,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-foreground p-2 rounded-lg hover:bg-muted transition-colors"
+              className="md:hidden text-foreground p-2 rounded-lg hover:bg-muted transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -152,73 +128,108 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu Drawer Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+
+        {/* Mobile Menu Drawer Panel */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[85vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
+          className={`fixed inset-y-0 right-0 z-50 w-full max-w-[320px] sm:max-w-[360px] bg-white shadow-2xl flex flex-col h-full transform transition-transform duration-300 ease-in-out md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
         >
-          <nav className="px-4 pb-4 pt-2 border-t border-border/50 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-2.5 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between px-6 h-20 border-b border-border/50 bg-slate-50">
+            <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+              <img
+                src="/logo.jpg"
+                alt="Aggarwal Nursing Home Logo"
+                className="h-10 w-auto object-contain rounded-md"
+              />
+              <span className="font-bold text-primary text-base tracking-tight">
+                ANH
+              </span>
+            </Link>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-foreground p-2 rounded-lg hover:bg-muted transition-colors cursor-pointer"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
 
-            {/* Collapsible Lab Tests for Mobile */}
-            <div className="border-t border-slate-100 pt-2 mt-2">
-              <button
-                onClick={() => setIsLabOpen(!isLabOpen)}
-                className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-foreground/80 hover:text-primary cursor-pointer"
-              >
-                <span className="flex items-center gap-2">
-                  <FlaskConical size={16} className="text-primary" />
-                  Lab Tests A-Z
-                </span>
-                <ChevronDown size={14} className={`transition-transform duration-200 ${isLabOpen ? 'rotate-180' : ''}`} />
-              </button>
+          {/* Drawer Content */}
+          <div className="flex-grow overflow-y-auto px-6 py-6 space-y-6">
+            <nav className="space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-4 py-3 text-base font-semibold text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-              <div className={`overflow-hidden transition-all duration-300 ${isLabOpen ? 'max-h-[350px] overflow-y-auto pl-4 py-1 space-y-1' : 'max-h-0'}`}>
-                {labTests.map((test) => (
-                  <Link
-                    key={test.slug}
-                    href={`/diagnostics/${test.slug}`}
-                    className="block px-4 py-2 text-xs font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 rounded-lg"
-                    onClick={() => {
-                      setIsLabOpen(false);
-                      setIsOpen(false);
-                    }}
-                  >
-                    {test.name}
-                  </Link>
-                ))}
+              {/* Collapsible Lab Tests */}
+              <div className="border-t border-slate-100 pt-3 mt-3">
+                <button
+                  onClick={() => setIsLabOpen(!isLabOpen)}
+                  className="w-full flex items-center justify-between px-4 py-3 text-base font-bold text-foreground/80 hover:text-primary cursor-pointer"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <FlaskConical size={18} className="text-primary" />
+                    Lab Tests A-Z
+                  </span>
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${isLabOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isLabOpen ? 'max-h-[300px] overflow-y-auto pl-4 py-2 mt-1 space-y-1 bg-slate-50/50 rounded-xl border border-slate-50' : 'max-h-0'
+                    }`}
+                >
+                  {labTests.map((test) => (
+                    <Link
+                      key={test.slug}
+                      href={`/diagnostics/${test.slug}`}
+                      className="block px-4 py-2.5 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                      onClick={() => {
+                        setIsLabOpen(false);
+                        setIsOpen(false);
+                      }}
+                    >
+                      {test.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            </nav>
+          </div>
 
-            <div className="pt-3 mt-2 border-t border-border/50 flex flex-col gap-2">
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-primary bg-primary/5 rounded-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                <Calendar size={16} />
-                Schedule Appointment
-              </Link>
-              <a
-                href="tel:+911234567890"
-                className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 bg-red-50 rounded-lg"
-              >
-                <AlertTriangle size={16} />
-                Emergency: +91 123-456-7890
-              </a>
-            </div>
-          </nav>
+          {/* Drawer Footer */}
+          <div className="p-6 border-t border-border/50 bg-slate-50 flex flex-col gap-3">
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-2.5 px-4 py-3.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-primary/90 shadow-md transition-all duration-200"
+              onClick={() => setIsOpen(false)}
+            >
+              <Calendar size={18} />
+              Schedule Appointment
+            </Link>
+            <a
+              href="tel:+919266610335"
+              className="flex items-center justify-center gap-2.5 px-4 py-3.5 text-sm font-bold text-red-700 bg-red-50 hover:bg-red-100 rounded-xl transition-all duration-200"
+            >
+              <AlertTriangle size={18} className="animate-pulse" />
+              Emergency: (+91) 9266610335
+            </a>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
   );
 }

@@ -5,10 +5,10 @@ import Footer from '@/components/footer';
 
 export default function Empanelment() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
-      <section className="pt-20 pb-8 px-3 sm:px-4 lg:px-6">
+      <main className="flex-grow pt-28 pb-12 px-3 sm:px-4 lg:px-6">
         <div className="max-w-[1100px] mx-auto">
           <h1 className="text-5xl font-bold text-foreground mb-8">Our Empanelment</h1>
           
@@ -51,7 +51,7 @@ export default function Empanelment() {
             </ul>
           </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

@@ -9,11 +9,10 @@ export default function About() {
       <Header />
 
       {/* Main Content Area */}
-      <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
-        <div className="max-w-[1500px] mx-auto space-y-24 sm:space-y-32">
-
-          {/* About Us Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <main className="flex-grow">
+        {/* About Us Section */}
+        <section className="min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50 border-b border-slate-100">
+          <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Image Column */}
             <div className="lg:col-span-6 relative group">
               <div className="absolute inset-0 bg-[#d81b47]/5 rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-1.5 group-hover:translate-y-1.5 transition-transform duration-300" />
@@ -54,10 +53,12 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Our Vision Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Our Vision Section */}
+        <section className="min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
+          <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Text Column */}
             <div className="lg:col-span-6 lg:order-1 order-2">
               <div className="flex items-center gap-3 mb-6">
@@ -92,10 +93,12 @@ export default function About() {
                 />
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Our Mission Section */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Our Mission Section */}
+        <section className="min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
+          <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Image Column */}
             <div className="lg:col-span-6 relative group">
               <div className="absolute inset-0 bg-[#d81b47]/5 rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-1.5 group-hover:translate-y-1.5 transition-transform duration-300" />
@@ -130,9 +133,8 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </section>
-
-        </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
