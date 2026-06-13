@@ -1,51 +1,58 @@
-import { Heart } from 'lucide-react';
-
 export default function HeroSection() {
   return (
-    <section className="relative h-screen pt-20 flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="/hospital-hero.png"
-          alt="Aggarwal Nursing Home - Modern healthcare facility"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-      </div>
+    <section className="relative w-full h-screen min-h-[680px] bg-slate-50 p-4 md:p-6 lg:p-8 pt-24 md:pt-26 lg:pt-28 flex flex-col overflow-hidden">
+      {/* Inner Hero Container */}
+      <div 
+        className="relative flex-grow w-full rounded-[2.5rem] overflow-hidden bg-cover bg-center shadow-lg"
+        style={{ backgroundImage: `url('/hospital-hero.png')` }}
+      >
+        {/* Overlays & Gradients */}
+        {/* 1. Dark bottom-to-top gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent" />
+        
+        {/* 2. Subtle aesthetic tint overall */}
+        <div className="absolute inset-0 bg-blue-950/20 mix-blend-multiply" />
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="w-full px-3">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
-            <Heart size={16} className="text-red-300" />
-
+        {/* Content Layout (Bottom Anchored) */}
+        <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 lg:gap-16 z-10">
+          
+          {/* Left Column: Typography */}
+          <div className="flex-1 flex flex-col items-start gap-4 max-w-3xl">
+            {/* Overline */}
+            <div className="flex items-center gap-3">
+              <span className="w-12 h-1 bg-blue-400 rounded-full" />
+              <span className="text-blue-400 font-bold tracking-wider text-sm uppercase">
+                Aggarwal Nursing
+              </span>
+            </div>
+            
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-tight">
+              Compassionate Care for Your Loved Ones
+            </h1>
+            
+            {/* Subheadline */}
+            <p className="text-slate-100 font-light text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed opacity-95">
+              CareHub provides world-class nursing care with a team of dedicated healthcare professionals committed to your family&apos;s wellbeing.
+            </p>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Compassionate Care for Your Loved Ones
-          </h1>
-
-          <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
-            CareHub provides world-class nursing care with a team of dedicated healthcare professionals committed to your family&apos;s wellbeing.
-          </p>
-          <p className="text-base text-white/75 mb-10 leading-relaxed max-w-xl">
-            Our state-of-the-art facilities, experienced staff, and personalized care plans ensure every resident receives the attention and support they deserve.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-white text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          {/* Right Column: Frosted Glass CTA Card */}
+          <div className="w-full lg:w-72 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-6 flex flex-col gap-4 shrink-0">
+            <p className="text-white text-sm font-semibold text-center tracking-wide">
+              Ready to speak with us?
+            </p>
+            <button className="w-full bg-white text-slate-900 py-3.5 px-4 rounded-xl font-bold hover:bg-slate-100 transition-colors shadow-lg text-sm md:text-base">
               Schedule a Tour
             </button>
-            <button className="border-2 border-white/70 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/15 backdrop-blur-sm transition-all duration-300">
+            <button className="w-full bg-transparent text-white py-3.5 px-4 rounded-xl font-bold border-2 border-white/30 hover:bg-white/10 transition-colors text-sm md:text-base">
               Learn More
             </button>
           </div>
+          
         </div>
       </div>
-
-      {/* Decorative bottom line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
     </section>
   );
 }
+
