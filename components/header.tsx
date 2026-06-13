@@ -57,7 +57,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="public/LOGO.png.jpeg"
+              src="/LOGO.png.jpeg"
               alt="Aggarwal Nursing Home Logo"
               className="h-14 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105"
             />
@@ -145,7 +145,7 @@ export default function Header() {
         <div className="flex items-center justify-between px-6 h-20 border-b border-border/50 bg-slate-50">
           <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
             <img
-              src="/logo.jpg"
+              src="/LOGO.png.jpeg"
               alt="Aggarwal Nursing Home Logo"
               className="h-10 w-auto object-contain rounded-md"
             />
