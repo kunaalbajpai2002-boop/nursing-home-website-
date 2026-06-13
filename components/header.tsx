@@ -55,15 +55,12 @@ export default function Header() {
       <div className="w-full h-20 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm px-4">
         <div className="max-w-[1500px] mx-auto h-full flex items-center justify-between relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <img
               src="/LOGO.png.jpeg"
               alt="Aggarwal Nursing Home Logo"
-              className="h-14 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105"
+              className="h-16 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <span className="font-bold text-primary text-xl hidden sm:inline tracking-tight group-hover:text-accent transition-colors duration-300">
-              Aggarwal Nursing Home
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -143,15 +140,12 @@ export default function Header() {
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 h-20 border-b border-border/50 bg-slate-50">
-          <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+          <Link href="/" className="flex items-center group" onClick={() => setIsOpen(false)}>
             <img
               src="/LOGO.png.jpeg"
               alt="Aggarwal Nursing Home Logo"
-              className="h-10 w-auto object-contain rounded-md"
+              className="h-12 w-auto object-contain rounded-md"
             />
-            <span className="font-bold text-primary text-base tracking-tight">
-              ANH
-            </span>
           </Link>
           <button
             onClick={() => setIsOpen(false)}
