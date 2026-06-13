@@ -62,7 +62,7 @@ export default function Header() {
                 className="h-14 w-auto object-contain rounded-md transition-transform duration-300 group-hover:scale-105"
               />
               <span className="font-bold text-primary text-xl hidden sm:inline tracking-tight group-hover:text-accent transition-colors duration-300">
-                Aggarwal nursing Home
+                Aggarwal Nursing Home
               </span>
             </Link>
 
