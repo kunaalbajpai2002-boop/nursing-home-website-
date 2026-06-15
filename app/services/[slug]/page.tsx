@@ -15,474 +15,312 @@ const serviceData: Record<string, {
   benefits: string[];
   faqs: { q: string; a: string }[];
 }> = {
-  anesthesiology: {
-    title: 'Anesthesiology',
-    tagline: 'Ensuring Pain-Free, Secure, and Compassionate Surgical Care',
+  // ─── Gynaecology Services ───
+  deliveries: {
+    title: 'All Kinds of Deliveries (Including High-Risk)',
+    tagline: 'Safe, compassionate care for normal, cesarean, and high-risk deliveries',
+    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our maternity unit provides state-of-the-art delivery services centering on safety, comfort, and immediate neonatal support. From normal physiological births to complex high-risk conditions requiring critical monitoring, our expert obstetricians and specialized teams are here for you 24/7.',
+    facilities: [
+      'State-of-the-art fetal heart rate monitoring and diagnostics',
+      'Fully equipped labor, delivery, and recovery suites',
+      '24/7 coverage by senior obstetricians and pediatric consultants',
+      'Immediate access to modern Neonatal ICU (NICU) if required',
+      'Comprehensive postpartum care, nutrition advice, and lactation support'
+    ],
+    benefits: [
+      'High safety record in managing complex maternal disorders and multiple births',
+      'Tailored birth plans designed to respect and match family preferences',
+      'Multi-disciplinary critical care backup for pre-eclampsia and gestational complications'
+    ],
+    faqs: [
+      {
+        q: 'What makes a delivery high-risk?',
+        a: 'A delivery is considered high-risk when there are factors that could affect the mother or baby\'s health. This includes pre-existing conditions like diabetes or hypertension, advanced maternal age, multiple births, or previous obstetric complications.'
+      },
+      {
+        q: 'Do you offer options for pain relief during labor?',
+        a: 'Yes, we offer comprehensive pain relief options, including epidural analgesia (painless labor) administered by senior anesthesiologists, to ensure a comfortable delivery experience.'
+      }
+    ]
+  },
+  'gynae-surgeries': {
+    title: 'All Gynae Surgeries',
+    tagline: 'Comprehensive surgical care for gynaecological conditions',
     image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Anesthesiology department provides state-of-the-art anesthesia care, centering on patient comfort, safety, and rapid recovery. From diagnostic consultations to complex operations, our anesthesiologists supervise every step of your surgical journey.',
+    description: 'We perform a wide spectrum of surgical procedures to treat conditions such as uterine fibroids, ovarian cysts, pelvic organ prolapse, and severe endometriosis. Our focus is on clinical excellence, absolute safety, and personalized post-operative recovery support.',
     facilities: [
-      'Pre-anesthesia checkups and consultation',
-      'Advanced general and regional anesthesia techniques',
-      'State-of-the-art vitals monitoring systems',
-      'Specialized post-anesthesia recovery units (PACU)',
-      'Acute pain management services'
+      'Modern modular operation theaters with strict sterilization control',
+      'High-resolution ultrasound and diagnostic mapping before surgery',
+      'Comfortable pre-operative prep and dedicated recovery wards',
+      'Continuous post-surgical pain management and vital signs monitoring'
     ],
     benefits: [
-      '100% safety record with certified senior anesthesiologists',
-      'Minimally invasive regional blocks to reduce systemic medication',
-      'Personalized recovery plans targeting minimal downtime'
+      'Surgically led by senior consulting gynaecologists with extensive experience',
+      'Strict adherence to international clinical pathways to reduce risk of infections',
+      'Complete post-operative care plans including physiotherapy and follow-up mapping'
     ],
     faqs: [
       {
-        q: 'Is it necessary to fast before anesthesia?',
-        a: 'Yes, fasting is critical to prevent complications during surgery. Generally, no solid food is allowed for 6 hours prior, and clear fluids must stop 2 hours prior.'
+        q: 'What are the most common gynaecological surgeries?',
+        a: 'Common surgeries include myomectomy (removal of fibroids), cystectomy (removal of ovarian cysts), and hysterectomy (removal of the uterus).'
       },
       {
-        q: 'How long does regional anesthesia last?',
-        a: 'Regional blocks typically last between 4 to 24 hours depending on the specific anesthetic used, offering continuous pain control post-surgery.'
+        q: 'How long is the typical recovery period after surgery?',
+        a: 'Recovery times vary by procedure. Major open surgeries generally require 4 to 6 weeks, while minor diagnostic surgeries allow normal activity within a few days.'
       }
     ]
   },
-  cardiology: {
-    title: 'Cardiology (Non-Invasive)',
-    tagline: 'Comprehensive Cardiac Diagnostic Solutions For A Healthy Heart',
-    image: 'https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Non-Invasive Cardiology unit utilizes cutting-edge medical diagnostics to assess and manage heart diseases. We focus on preventive screening, rapid diagnosis, and detailed outpatient management schemes.',
-    facilities: [
-      '2D/3D Echocardiography & Color Doppler',
-      'Treadmill Testing (TMT) and Stress Tests',
-      '24-hour Holter monitoring and Ambulatory BP checks',
-      'Preventive cardiac health screening packages',
-      'Pediatric and adult cardiac consultations'
-    ],
-    benefits: [
-      'Early detection of silent cardiovascular risks',
-      'Completely non-invasive procedures with zero discomfort',
-      'Highly trained cardiologists interpreting patient data'
-    ],
-    faqs: [
-      {
-        q: 'What should I wear for a Treadmill Test (TMT)?',
-        a: 'Wear comfortable, loose clothing and running shoes. Avoid large meals or caffeine at least 3 hours before the test.'
-      },
-      {
-        q: 'How long does a standard echocardiogram take?',
-        a: 'A standard echo test takes roughly 30 to 45 minutes and is completely painless.'
-      }
-    ]
-  },
-  'critical-care': {
-    title: 'Critical Care',
-    tagline: 'Round-the-Clock Intensive Support for Critical Patient Needs',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'The Critical Care Unit at CareHub is built to handle severe illnesses, post-surgical recovery complications, and medical emergencies. Supported by our 24/7 staff, our ICU stands ready to deliver prompt, life-saving therapies.',
-    facilities: [
-      'Advanced ventilators and respiratory therapy systems',
-      'Dedicated 1:1 nurse-to-patient care ratio for severe cases',
-      'Continuous hemodynamics and cardiac output monitors',
-      'Sterile, climate-controlled intensive care unit (ICU)',
-      'Instant access to pathology labs and diagnostic imaging'
-    ],
-    benefits: [
-      'Emergency response team active 24 hours a day',
-      'Zero compromise on sterilization and infection control protocols',
-      'Highly qualified intensive care specialists (intensivists) on-site'
-    ],
-    faqs: [
-      {
-        q: 'What are the visiting hours for the Critical Care Unit?',
-        a: 'To maintain a quiet and sterile environment, visits are restricted. Usually, visits are permitted from 11:00 AM - 12:00 PM and 5:00 PM - 6:00 PM.'
-      },
-      {
-        q: 'How is patient comfort managed in the ICU?',
-        a: 'We use continuous sedation monitoring and specialized air-mattresses to alleviate pain and prevent secondary issues like pressure sores.'
-      }
-    ]
-  },
-  'dental-care': {
-    title: 'Dental Care',
-    tagline: 'Restoring Healthy Smiles with Advanced Dental Technologies',
-    image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'We offer comprehensive dental services ranging from preventive care to cosmetic dentistry. Our focus is on maintaining long-term oral hygiene and functional teeth, particularly optimized for senior and geriatric needs.',
-    facilities: [
-      'Digital RVG X-ray diagnostics',
-      'Advanced root canal treatments (RCT)',
-      'Dental implants, crowns, and bridges',
-      'Custom geriatric dentures and denture care',
-      'Oral scaling, polishing, and cosmetic whitening'
-    ],
-    benefits: [
-      'Pain-free dental procedures with modern equipment',
-      'Customized geriatric care plans targeting comfortable chewing',
-      'Strict sterilization standards meeting ISO certifications'
-    ],
-    faqs: [
-      {
-        q: 'How often should seniors visit the dentist?',
-        a: 'Seniors should visit the dentist at least twice a year to check for gum issues, fitment of dentures, and early signs of oral diseases.'
-      },
-      {
-        q: 'What is the lifespan of custom dentures?',
-        a: 'With proper cleaning and care, quality dentures last between 5 to 7 years before needing adjustments.'
-      }
-    ]
-  },
-  dermatology: {
-    title: 'Dermatology',
-    tagline: 'Clinical and Cosmetic Skincare Solutions Tailored to You',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Dermatology department treats conditions affecting the skin, hair, and nails. We combine medical expertise with aesthetic therapy to offer diagnostic testing, medical management, and minor cosmetic enhancements.',
-    facilities: [
-      'Chronic eczema, acne, and psoriasis management',
-      'Skin allergy patch testing',
-      'Minor clinical surgeries (cyst and mole removal)',
-      'Geriatric skin dryness and irritation management',
-      'Anti-aging and cosmetic skincare plans'
-    ],
-    benefits: [
-      'Board-certified clinical dermatologists',
-      'Advanced FDA-approved diagnostic equipment',
-      'Structured long-term management programs for chronic eczema'
-    ],
-    faqs: [
-      {
-        q: 'Are minor mole removals painful?',
-        a: 'No, we apply local numbing creams or injections so the entire procedure is completely painless.'
-      },
-      {
-        q: 'How can seniors prevent severe dry skin?',
-        a: 'Use lukewarm water for baths, apply heavy medical moisturizers within 3 minutes of bathing, and keep hydrated.'
-      }
-    ]
-  },
-  physiotherapy: {
-    title: 'Physiotherapy & Rehab',
-    tagline: 'Reclaiming Mobility and Strength Through Custom Rehabilitation',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Physiotherapy and Rehabilitation division helps patients recover physical mobility, manage chronic pain, and recover after major bone or muscle surgeries. We offer tailored physical coaching.',
-    facilities: [
-      'Post-operative orthopedic rehabilitation',
-      'Ultrasonic, shortwave diathermy, and laser therapy',
-      'Post-stroke and cardiac rehab therapy',
-      'Osteoarthritis and back pain management clinics',
-      'Balance and fall-prevention training for seniors'
-    ],
-    benefits: [
-      'Dedicated personalized physical therapy coaches',
-      'State-of-the-art gym equipment for rehabilitation',
-      'Continuous progress mapping and balance assessments'
-    ],
-    faqs: [
-      {
-        q: 'How many sessions of physiotherapy will I need?',
-        a: 'The sessions vary. A mild joint strain might require 3-5 sessions, while stroke or post-surgical rehab can span 4-12 weeks.'
-      },
-      {
-        q: 'Do you offer home-based physiotherapy services?',
-        a: 'Yes, we have specialized physiotherapists who can visit your home for patients facing extreme mobility challenges.'
-      }
-    ]
-  },
-
-  'onco-surgery': {
-    title: 'Onco Surgery',
-    tagline: 'Advanced Surgical Care for Cancer Treatment',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
-
-    description:
-      'Onco Surgery focuses on the surgical management of cancer. Our team uses advanced techniques to remove tumors safely while preserving maximum healthy tissue and improving patient outcomes.',
-
-    facilities: [
-      'Cancer diagnosis and surgical evaluation',
-      'Tumor removal surgeries',
-      'Minimally invasive oncological procedures',
-      'Post-surgery cancer care',
-      'Multidisciplinary tumor board consultation'
-    ],
-
-    benefits: [
-      'Expert oncology surgeons',
-      'Advanced surgical technology',
-      'Personalized cancer treatment plans'
-    ],
-
-    faqs: [
-      {
-        q: 'Is surgery always required for cancer treatment?',
-        a: 'No, treatment depends on cancer type and stage. Surgery is one of several treatment options.'
-      },
-      {
-        q: 'How long is recovery after onco surgery?',
-        a: 'Recovery varies depending on the type of surgery and patient condition.'
-      }
-    ]
-  },
-
-  ophthalmology: {
-    title: 'Ophthalmology',
-    tagline: 'Advanced Eye Care for Better Vision and Healthy Eyes',
-    image: 'https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&q=80&w=800&h=500',
-    description:
-      'Our Ophthalmology department provides comprehensive eye care including diagnosis, treatment, and surgical management of eye disorders with advanced technology.',
-
-    facilities: [
-      'Vision testing and eye screening',
-      'Cataract and glaucoma evaluation',
-      'Retinal disease management',
-      'Diabetic eye care screening',
-      'Prescription and corrective lenses guidance'
-    ],
-
-    benefits: [
-      'Early detection of vision problems',
-      'Advanced diagnostic imaging tools',
-      'Expert ophthalmologists'
-    ],
-
-    faqs: [
-      {
-        q: 'How often should I get my eyes checked?',
-        a: 'Adults should have a full eye exam every 1–2 years depending on age and risk factors.'
-      }
-    ]
-  },
-
-  'obstetrics-gynecology': {
-    title: 'Obstetrics & Gynecology',
-    tagline: 'Complete Women’s Health and Pregnancy Care',
-    image: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800&h=500',
-    description:
-      'We provide complete care for women including pregnancy management, childbirth, fertility care, and gynecological treatments.',
-
-    facilities: [
-      'Pregnancy monitoring and delivery care',
-      'High-risk pregnancy management',
-      'Fertility consultation',
-      'Menstrual disorder treatment',
-      'Gynecological surgeries'
-    ],
-
-    benefits: [
-      'Experienced gynecologists',
-      'Safe maternity care',
-      'Advanced fetal monitoring'
-    ],
-
-    faqs: [
-      {
-        q: 'When should I first visit during pregnancy?',
-        a: 'As soon as pregnancy is confirmed or within the first 8 weeks.'
-      }
-    ]
-  },
-
-  'respiratory-medicine': {
-    title: 'Respiratory Medicine',
-    tagline: 'Expert Care for Lung and Breathing Disorders',
-    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&q=80&w=800&h=500',
-    description:
-      'We diagnose and treat diseases affecting the lungs and respiratory system including chronic and acute conditions.',
-
-    facilities: [
-      'Asthma and COPD management',
-      'Lung function testing',
-      'Sleep apnea diagnosis',
-      'Chest infection treatment',
-      'Pulmonary rehabilitation'
-    ],
-
-    benefits: [
-      'Advanced lung testing equipment',
-      'Specialized respiratory care team',
-      'Long-term disease management'
-    ],
-
-    faqs: [
-      {
-        q: 'Can asthma be completely cured?',
-        a: 'Asthma cannot be cured but can be effectively controlled with treatment.'
-      }
-    ]
-  },
-
-  'pediatric-neonatology': {
-    title: 'Pediatric Neonatology',
-    tagline: 'Specialized Care for Newborns and Children',
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800&h=500',
-    description:
-      'We provide specialized medical care for newborns, infants, and children including intensive neonatal support.',
-
-    facilities: [
-      'NICU (Neonatal Intensive Care Unit)',
-      'Premature baby care',
-      'Child development monitoring',
-      'Vaccination programs',
-      'Pediatric emergency care'
-    ],
-
-    benefits: [
-      'Expert pediatricians',
-      'Advanced NICU support',
-      'Child-friendly environment'
-    ],
-
-    faqs: [
-      {
-        q: 'When should newborns first visit a doctor?',
-        a: 'Usually within 3–5 days after birth for initial assessment.'
-      }
-    ]
-  },
-
-  'general-medicine-emergency-geriatrics': {
-    title: 'General Medicine, Emergency & Geriatrics',
-    tagline: 'Complete Healthcare for All Ages & Emergencies',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=500',
-    description:
-      'Comprehensive care covering routine illnesses, emergency treatments, and specialized elderly care.',
-
-    facilities: [
-      '24/7 emergency care',
-      'Chronic disease management',
-      'Geriatric health care',
-      'Infection treatment',
-      'Preventive health checkups'
-    ],
-
-    benefits: [
-      'Round-the-clock doctors',
-      'Fast emergency response',
-      'Senior citizen care programs'
-    ],
-
-    faqs: [
-      {
-        q: 'Do you provide emergency services 24/7?',
-        a: 'Yes, emergency care is available round the clock.'
-      }
-    ]
-  },
-  'plastic-surgery': {
-    title: 'Plastic & Reconstructive Surgery',
-    tagline: 'Restoring Form, Function, and Confidence',
+  'laparoscopic-robotic-surgeries': {
+    title: 'Laparoscopic & Robotic Gynae Surgeries',
+    tagline: 'Minimally invasive procedures for faster recovery and minimal scarring',
     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Plastic & Reconstructive Surgery department offers a wide spectrum of restorative, aesthetic, and reconstructive services. From post-trauma reconstruction to advanced cosmetic procedures, our skilled surgeons use the latest techniques to prioritize safety, precision, and patient satisfaction.',
+    description: 'We specialize in advanced minimally invasive keyhole procedures. Laparoscopic and robotic-assisted techniques allow us to perform complex surgeries through tiny incisions, offering superior precision and a much smoother recovery experience for our patients.',
     facilities: [
-      'Reconstructive microsurgery',
-      'Post-burn scar revision',
-      'Cosmetic facial and body contouring',
-      'Hand and maxillofacial surgery',
-      'Advanced wound healing therapies'
+      'High-definition 3D laparoscopy towers and imaging equipment',
+      'Specialized instruments designed for micro-surgical precision',
+      'Anesthesia protocols optimized for rapid-recovery keyhole surgeries',
+      'Outpatient setup for day-care laparoscopic procedures'
     ],
     benefits: [
-      'Highly experienced certified plastic surgeons',
-      'State-of-the-art sterile operating theaters',
-      'Comprehensive post-operative recovery support'
+      'Significantly less post-operative pain and reduced dependency on medication',
+      'Minimal blood loss, lower infection rates, and cosmetic tiny scars',
+      'Shorter hospital stays (often discharged within 24 hours) and quicker return to work'
     ],
     faqs: [
       {
-        q: 'How long is the recovery period for cosmetic surgery?',
-        a: 'Recovery times depend entirely on the procedure. Minor procedures may take a few days, while major surgeries can require 2-6 weeks of rest.'
+        q: 'Are laparoscopic surgeries safe for complex fibroids?',
+        a: 'Yes, with advanced laparoscopic instrumentation and experienced surgeons, even large fibroids and complex endometriosis can be safely treated using keyhole methods.'
+      },
+      {
+        q: 'Do laparoscopic surgeries require general anesthesia?',
+        a: 'Yes, laparoscopic procedures are performed under general anesthesia to ensure patient safety and total comfort during the surgery.'
+      }
+    ]
+  },
+  'cosmetic-gynaecology': {
+    title: 'Cosmetic Gynaecology',
+    tagline: 'Functional and aesthetic intimate treatments for enhanced wellness',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our cosmetic gynaecology clinic provides state-of-the-art treatments to address aesthetic and functional changes in intimate areas. We offer personalized, highly confidential care designed to restore tone, relieve discomfort, and boost self-confidence.',
+    facilities: [
+      'Private, highly confidential consulting and procedure suites',
+      'Advanced non-surgical laser and radiofrequency rejuvenation devices',
+      'Equipped units for minor surgical labiaplasty and vaginoplasty',
+      'Post-treatment monitoring and recovery support'
+    ],
+    benefits: [
+      'Safe, clinical-grade aesthetic and functional enhancement treatments',
+      'Relief from local irritation and physical discomfort caused by structural changes',
+      'Dedicated female healthcare team offering empathetic, private care'
+    ],
+    faqs: [
+      {
+        q: 'Is there downtime after non-surgical laser rejuvenation?',
+        a: 'Non-surgical treatments have minimal to no downtime. Patients can resume light daily activities immediately, though refraining from strenuous exercise or intimate contact is advised for a few days.'
+      },
+      {
+        q: 'Are these procedures purely cosmetic?',
+        a: 'No, many procedures are functional. They address physical issues like local irritation, skin laxity, pain during exercise, and stress urinary incontinence.'
       }
     ]
   },
   'infertility-treatment': {
     title: 'Infertility Treatment',
-    tagline: 'Supporting Your Journey to Parenthood',
+    tagline: 'Comprehensive and compassionate support on your path to parenthood',
     image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Infertility and Reproductive Medicine department provides comprehensive diagnostic services and state-of-the-art treatment options for couples seeking to start a family. We combine advanced clinical science with compassionate care to guide you through every step of this journey.',
+    description: 'We offer compassionate, comprehensive fertility assessments and treatment options. Our clinic focuses on identifying the root cause of fertility issues and designing customized solutions, including ovulation induction and intrauterine insemination (IUI).',
     facilities: [
-      'Advanced fertility evaluation for couples',
-      'Ovulation induction and tracking',
-      'Intrauterine Insemination (IUI)',
-      'Semen analysis and preparation',
-      'Counseling and psychological support'
+      'Comprehensive male and female fertility evaluation services',
+      'Ultrasound monitoring for follicular tracking and ovulation',
+      'Advanced laboratory for Intrauterine Insemination (IUI)',
+      'Hormonal assays and metabolic diagnostic testing',
+      'Empathetic counseling and emotional wellness programs'
     ],
     benefits: [
-      'High success rates with tailored treatments',
-      'Compassionate and confidential care environments',
-      'Experienced reproductive endocrinologists and gynecologists'
+      'Highly individualized treatment plans focusing on couple diagnostics',
+      'Private, calm, and reassuring clinic environments',
+      'Close coordination with reproductive endocrinology specialists'
     ],
     faqs: [
       {
-        q: 'When should we consult a fertility specialist?',
-        a: 'We recommend consulting a specialist if you have been trying to conceive for over a year (or six months if the female partner is over 35).'
+        q: 'When should a couple seek fertility assistance?',
+        a: 'We recommend scheduling a consultation after one year of regular unprotected intercourse if the female partner is under 35, or after six months if over 35.'
+      },
+      {
+        q: 'What is Intrauterine Insemination (IUI)?',
+        a: 'IUI is a fertility treatment where processed, concentrated sperm is placed directly inside the uterus around the time of ovulation to facilitate fertilization.'
       }
     ]
   },
-  'orthopedic-care': {
-    title: 'Orthopedic Care',
-    tagline: 'Restoring Joint Health, Mobility, and Vitality',
+  'preventive-health-checks': {
+    title: 'Preventive Health Checks',
+    tagline: 'Proactive screenings to safeguard women\'s wellness at every age',
+    image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Preventive care is key to maintaining women\'s wellness. Our specialized screening packages include routine physicals, Pap smears, breast screenings, and pelvic imaging to ensure early detection of any gynaecological conditions.',
+    facilities: [
+      'Comprehensive screening packages for different age groups',
+      'High-resolution transvaginal and pelvic ultrasound scans',
+      'Pap smear testing and high-risk HPV screening diagnostics',
+      'Clinical breast examinations and bone mineral density (BMD) scans',
+      'Specialized consultations for post-menopausal wellness'
+    ],
+    benefits: [
+      'Early detection and management of silent gynaecological conditions',
+      'Structured health mapping and customized preventative guidance',
+      'Quick and stress-free screening setups'
+    ],
+    faqs: [
+      {
+        q: 'How often should women get a Pap smear?',
+        a: 'Generally, women aged 21 to 65 are advised to have a Pap smear every three years. From age 30, co-testing with an HPV test every five years is another recommended screening pathway.'
+      },
+      {
+        q: 'What does a gynaecological ultrasound check for?',
+        a: 'A pelvic ultrasound checks the structure of the uterus, ovaries, fallopian tubes, and bladder, helping detect cysts, fibroids, polyps, or signs of infection.'
+      }
+    ]
+  },
+
+  // ─── Pediatric Services ───
+  'pediatric-care': {
+    title: 'Pediatric Care',
+    tagline: 'Comprehensive medical care for children of all ages',
+    image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Pediatric Care division provides comprehensive healthcare for children from birth through adolescence. We offer preventive health services, routine developmental check-ups, immunizations, and prompt treatment for acute and chronic childhood illnesses.',
+    facilities: [
+      'Dedicated child-friendly consulting clinics',
+      'General pediatric health screenings and assessments',
+      'Asthma and childhood allergy management',
+      'Growth and developmental delay mapping'
+    ],
+    benefits: [
+      'Empathetic and highly trained senior pediatricians',
+      'Child-friendly environment to reduce clinical anxiety',
+      'Proactive guidelines on childhood nutrition and lifestyle'
+    ],
+    faqs: [
+      {
+        q: 'When should I take my child to a pediatrician?',
+        a: 'You should visit for regular developmental check-ups (well-child visits) according to standard timelines, and whenever your child shows signs of illness, persistent fever, or developmental concerns.'
+      }
+    ]
+  },
+  'neonatal-care': {
+    title: 'Newborn / Neonatal Care',
+    tagline: 'Specialized medical care and nurturing for your newborn',
+    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Neonatal Care unit specializes in the medical management and support of newborns during their first critical weeks of life. We provide supportive care for feeding guidance, jaundice monitoring, growth checks, and early neurological milestones.',
+    facilities: [
+      'Modern infant warming and monitoring systems',
+      'Jaundice screening and photo-therapy units',
+      'Expert breastfeeding and lactation counseling',
+      'Newborn metabolic and hearing screening checks'
+    ],
+    benefits: [
+      'Dedicated neonatal experts available 24/7',
+      'Close coordination with the maternal delivery team',
+      'Calm, warm, and highly supportive nursery environment'
+    ],
+    faqs: [
+      {
+        q: 'What is jaundice and how is it managed?',
+        a: 'Newborn jaundice is a yellowing of the skin caused by high bilirubin levels. We monitor it closely and use safe phototherapy (light therapy) to help the baby\'s body clear it.'
+      }
+    ]
+  },
+  vaccinations: {
+    title: 'Vaccinations',
+    tagline: 'Protecting children from preventable diseases with timely immunizations',
+    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'We provide complete vaccination services following the latest guidelines from pediatric boards and health ministries. Timely immunizations are essential to protect your child from life-threatening preventable infectious diseases.',
+    facilities: [
+      'Safe and temperature-controlled vaccine storage',
+      'Full range of mandatory and optional immunizations',
+      'Comprehensive electronic immunization record tracking',
+      'Gentle administration techniques to minimize child distress'
+    ],
+    benefits: [
+      'Genuine, clinical-grade vaccines sourced directly',
+      'Expert guidance on delayed or catch-up immunization schedules',
+      'Regular reminders for upcoming vaccine timelines'
+    ],
+    faqs: [
+      {
+        q: 'Are vaccines safe for newborns?',
+        a: 'Yes, vaccines undergo extensive clinical safety checks before approval. The benefits of immunization in preventing severe diseases far outweigh minor temporary side effects like mild fever.'
+      }
+    ]
+  },
+  'pediatric-hospitalization': {
+    title: 'Hospitalization for Pediatric Illnesses',
+    tagline: 'Comfortable, round-the-clock clinical care for acute childhood conditions',
+    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our dedicated pediatric hospitalization unit provides compassionate, round-the-clock clinical care for children requiring admission due to acute conditions like severe infections, dehydration, breathing difficulties, or recovery after pediatric procedures.',
+    facilities: [
+      'Comfortable pediatric inpatient rooms with parent stay-in facilities',
+      '24/7 nursing care trained specifically in pediatric clinical skills',
+      'Dedicated pediatric emergency response setup',
+      'Advanced IV fluid management and clinical monitoring'
+    ],
+    benefits: [
+      'Continuous medical surveillance by senior consultants',
+      'Nurturing clinical environment specifically tailored for kids',
+      'Empathetic care minimizing trauma and hospital anxiety'
+    ],
+    faqs: [
+      {
+        q: 'Can parents stay with the child during hospitalization?',
+        a: 'Yes, we encourage and require at least one parent or guardian to stay with the hospitalized child. Rooms are fully equipped with comfortable bedding for the accompanying parent.'
+      }
+    ]
+  },
+  'nicu-care': {
+    title: 'PICU / NICU Care',
+    tagline: 'Advanced, intensive critical care for neonates and children',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800&h=500',
+    description: 'Our Neonatal Intensive Care Unit (NICU) and Pediatric Intensive Care Unit (PICU) provide advanced, life-saving critical care for premature babies, low birth weight infants, and children facing critical health situations. Backed by cutting-edge life support systems, our team is ready 24/7.',
+    facilities: [
+      'Advanced neonatal incubators and thermal care systems',
+      'Mechanical ventilation and high-frequency oscillatory support',
+      'Continuous multi-parameter hemodynamic monitoring',
+      'In-house arterial blood gas (ABG) and rapid lab diagnostics'
+    ],
+    benefits: [
+      '1:1 specialized nurse-to-patient critical care ratio',
+      'Highly experienced neonatologists and pediatric intensivists',
+      'Maximum sterility and strict infection control guidelines'
+    ],
+    faqs: [
+      {
+        q: 'Why does a baby need NICU care?',
+        a: 'Common reasons include premature birth (before 37 weeks), low birth weight, breathing difficulties, neonatal infections, or surgical conditions.'
+      }
+    ]
+  },
+  'pediatric-health-checks': {
+    title: 'Preventive Health Checks',
+    tagline: 'Proactive screenings to monitor growth, development, and wellness',
     image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Orthopedics department provides expert care for disorders of the bones, joints, ligaments, tendons, and muscles. From treating sports injuries to performing advanced joint replacement surgeries, we help patients of all ages regain pain-free mobility.',
+    description: 'Routine check-ups are essential to monitor your child\'s physical growth, neurological milestones, and overall health. Our preventive checks help detect potential health issues early, allowing for timely, effective clinical intervention.',
     facilities: [
-      'Joint replacement therapies (hip and knee)',
-      'Arthroscopic sports medicine',
-      'Fracture and trauma management',
-      'Osteoporosis screening and bone health clinics',
-      'Rheumatology and arthritis management'
+      'Complete physical examination and vitals screening',
+      'Detailed growth charting (height, weight, head circumference)',
+      'Developmental, speech, and behavioral milestone mapping',
+      'Basic nutritional screening and deficiency checkups'
     ],
     benefits: [
-      'Expert orthopedic surgeons and physical therapists',
-      'Advanced minimally invasive surgical options',
-      'Integrated rehabilitation and physiotherapy pipelines'
+      'Early detection of vision, hearing, or growth abnormalities',
+      'Personalized advice on pediatric nutrition, sleep, and physical safety',
+      'Complete health files for school admission and history tracking'
     ],
     faqs: [
       {
-        q: 'What is the recovery time for a total knee replacement?',
-        a: 'Most patients start walking with assistance within 24 hours. Full return to normal, low-impact daily activities usually takes 4 to 6 weeks.'
-      }
-    ]
-  },
-  'neurology': {
-    title: 'Neurology',
-    tagline: 'Advanced Care for the Brain, Spine, and Nervous System',
-    image: 'https://images.unsplash.com/photo-1559757175-7b315e3406a7?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'The Neurology department specializes in diagnosing and treating complex disorders of the central and peripheral nervous systems. We offer advanced diagnostic investigations and personalized management programs for acute and chronic neurological conditions.',
-    facilities: [
-      'Stroke identification and post-stroke management',
-      'Comprehensive epilepsy care clinics',
-      'Movement disorders and Parkinson\'s disease care',
-      'Electromyography (EMG) and nerve conduction studies',
-      'Headache and chronic pain management'
-    ],
-    benefits: [
-      'Experienced board-certified neurologists',
-      'Sophisticated neuro-diagnostic technologies',
-      'Care coordination for neurological rehabilitation'
-    ],
-    faqs: [
-      {
-        q: 'What are common signs of neurological issues?',
-        a: 'Symptoms include persistent headaches, numbness, muscle weakness, coordination issues, unexplained dizziness, and memory lapses.'
-      }
-    ]
-  },
-  'urology': {
-    title: 'Urology',
-    tagline: 'Specialized Care for Renal and Genitourinary Health',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
-    description: 'Our Urology department offers comprehensive medical and surgical solutions for disorders of the kidneys, urinary bladder, ureters, and male reproductive organs. We focus on minimally invasive procedures and modern therapies to treat infections, stones, and oncology cases.',
-    facilities: [
-      'Kidney stone management (laser lithotripsy)',
-      'Prostate disorder treatments',
-      'Urinary tract infection (UTI) clinics',
-      'Uro-oncology evaluations',
-      'Incontinence and bladder health programs'
-    ],
-    benefits: [
-      'Certified senior urologists on panel',
-      'Minimally invasive keyhole and laser procedures',
-      'Rapid diagnostic evaluations and quick recovery timelines'
-    ],
-    faqs: [
-      {
-        q: 'How can I prevent kidney stones?',
-        a: 'Stay well-hydrated by drinking at least 2.5 to 3 liters of water daily, reduce sodium intake, and maintain a balanced diet.'
+        q: 'What is checked during a well-child checkup?',
+        a: 'A well-child checkup includes a full physical exam, growth measurements, milestone tracking, vaccination updates, and advice on healthy lifestyle patterns.'
       }
     ]
   }
-
 };
 
 interface PageProps {
@@ -492,7 +330,7 @@ interface PageProps {
 export default function ServiceDetail({ params }: PageProps) {
   const resolvedParams = React.use(params);
   const slug = resolvedParams.slug;
-  const service = serviceData[slug] || serviceData.cardiology; // Fallback to cardiology
+  const service = serviceData[slug] || serviceData.deliveries; // Fallback to deliveries
 
   // Booking Form State
   const [formData, setFormData] = useState({
@@ -514,37 +352,37 @@ export default function ServiceDetail({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 flex flex-col">
+    <div className="min-h-screen bg-[#FDF8F0] flex flex-col">
       <Header />
 
       {/* Main Container */}
-      <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1500px] mx-auto">
+      <main className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-[1600px] mx-auto">
 
           {/* Back Button */}
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-[#d81b47] font-semibold text-sm sm:text-base mb-8 transition-colors select-none group"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-[#C8923C] font-semibold text-sm sm:text-base mb-8 transition-colors select-none group"
           >
             <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
             Back to Services
           </Link>
 
           {/* Department Header Banner */}
-          <div className="relative rounded-2xl overflow-hidden shadow-md mb-12 h-64 sm:h-80 md:h-[400px]">
+          <div className="relative rounded-3xl overflow-hidden shadow-md mb-12 h-64 sm:h-80 md:h-[400px]">
             <img
               src={service.image}
               alt={service.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1e2f41]/90 via-[#1e2f41]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1B2A3D]/95 via-[#1B2A3D]/75 to-transparent" />
 
             {/* Banner Text overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 md:px-16 max-w-3xl text-white">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
                 {service.title}
               </h1>
-              <p className="text-pink-300 font-semibold text-base sm:text-lg md:text-xl mt-3 tracking-wide">
+              <p className="text-[#D4A853] font-semibold text-base sm:text-lg md:text-xl mt-3 tracking-wide">
                 {service.tagline}
               </p>
             </div>
@@ -554,30 +392,30 @@ export default function ServiceDetail({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
             {/* Left Column - Detailed Copy */}
-            <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-sm space-y-10">
+            <div className="lg:col-span-8 bg-white rounded-3xl border border-[#E8DFD0] p-6 sm:p-10 shadow-sm space-y-10">
 
               {/* Description */}
               <div>
-                <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">
-                  <HeartPulse className="text-[#d81b47]" size={24} />
+                <h2 className="text-2xl font-bold text-[#1B2A3D] mb-4 flex items-center gap-2.5" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  <HeartPulse className="text-[#C8923C]" size={24} />
                   Department Overview
                 </h2>
-                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                <p className="text-[#6B6B7B] leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </p>
               </div>
 
               {/* Core Offerings / Facilities */}
               <div>
-                <h2 className="text-2xl font-bold text-[#1e2f41] mb-6 flex items-center gap-2.5">
-                  <Clock className="text-[#d81b47]" size={24} />
+                <h2 className="text-2xl font-bold text-[#1B2A3D] mb-6 flex items-center gap-2.5" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  <Clock className="text-[#C8923C]" size={24} />
                   Facilities & Services
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {service.facilities.map((fac, idx) => (
-                    <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                      <span className="w-2.5 h-2.5 bg-[#8cb069] rounded-full mt-1.5 flex-shrink-0"></span>
-                      <span className="text-slate-700 text-sm sm:text-base font-medium leading-normal">{fac}</span>
+                    <div key={idx} className="flex items-start gap-3 bg-[#FDF8F0] p-4 rounded-2xl border border-[#E8DFD0]">
+                      <span className="w-2.5 h-2.5 bg-[#C8923C] rounded-full mt-1.5 flex-shrink-0"></span>
+                      <span className="text-[#1B2A3D] text-sm sm:text-base font-medium leading-normal">{fac}</span>
                     </div>
                   ))}
                 </div>
@@ -585,14 +423,14 @@ export default function ServiceDetail({ params }: PageProps) {
 
               {/* Benefits */}
               <div>
-                <h2 className="text-2xl font-bold text-[#1e2f41] mb-4 flex items-center gap-2.5">
-                  <ShieldCheck className="text-[#d81b47]" size={24} />
+                <h2 className="text-2xl font-bold text-[#1B2A3D] mb-4 flex items-center gap-2.5" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  <ShieldCheck className="text-[#C8923C]" size={24} />
                   Why Choose Us?
                 </h2>
                 <ul className="space-y-3">
                   {service.benefits.map((ben, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-600 leading-relaxed text-sm sm:text-base">
-                      <CheckCircle size={18} className="text-[#8cb069] mt-1 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-[#6B6B7B] leading-relaxed text-sm sm:text-base">
+                      <CheckCircle size={18} className="text-[#C8923C] mt-1 flex-shrink-0" />
                       <span>{ben}</span>
                     </li>
                   ))}
@@ -601,13 +439,13 @@ export default function ServiceDetail({ params }: PageProps) {
 
               {/* FAQs */}
               {service.faqs.length > 0 && (
-                <div className="pt-6 border-t border-slate-100">
-                  <h2 className="text-2xl font-bold text-[#1e2f41] mb-6">Frequently Asked Questions</h2>
+                <div className="pt-6 border-t border-[#E8DFD0]/60">
+                  <h2 className="text-2xl font-bold text-[#1B2A3D] mb-6" style={{ fontFamily: 'Outfit, sans-serif' }}>Frequently Asked Questions</h2>
                   <div className="space-y-6">
                     {service.faqs.map((faq, idx) => (
                       <div key={idx} className="space-y-2">
-                        <h4 className="font-bold text-[#1e2f41] text-base sm:text-lg">Q. {faq.q}</h4>
-                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base pl-5 border-l-2 border-slate-200">
+                        <h4 className="font-bold text-[#1B2A3D] text-base sm:text-lg" style={{ fontFamily: 'Outfit, sans-serif' }}>Q. {faq.q}</h4>
+                        <p className="text-[#6B6B7B] leading-relaxed text-sm sm:text-base pl-5 border-l-2 border-[#C8923C]/40">
                           {faq.a}
                         </p>
                       </div>
@@ -619,23 +457,23 @@ export default function ServiceDetail({ params }: PageProps) {
             </div>
 
             {/* Right Column - Booking Card */}
-            <div className="lg:col-span-4 bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm lg:sticky lg:top-28">
+            <div className="lg:col-span-4 bg-white rounded-3xl border border-[#E8DFD0] p-6 sm:p-8 shadow-sm lg:sticky lg:top-28">
 
               {!isBooked ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-                    <Calendar className="text-[#d81b47]" size={22} />
-                    <h3 className="text-xl font-bold text-[#1e2f41]">Book Consultation</h3>
+                  <div className="flex items-center gap-2.5 pb-4 border-b border-[#E8DFD0]">
+                    <Calendar className="text-[#C8923C]" size={22} />
+                    <h3 className="text-xl font-bold text-[#1B2A3D]" style={{ fontFamily: 'Outfit, sans-serif' }}>Book Consultation</h3>
                   </div>
 
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Your Name *</label>
+                    <label className="text-xs font-bold text-[#6B6B7B] uppercase tracking-wider">Your Name *</label>
                     <input
                       type="text"
                       required
                       placeholder=""
-                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all"
+                      className="w-full bg-[#FDF8F0] border border-[#E8DFD0] rounded-xl py-2.5 px-4 text-sm text-[#1B2A3D] placeholder-slate-400 focus:outline-none focus:border-[#C8923C] focus:ring-1 focus:ring-[#C8923C] transition-all"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
@@ -643,12 +481,12 @@ export default function ServiceDetail({ params }: PageProps) {
 
                   {/* Phone */}
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone Number *</label>
+                    <label className="text-xs font-bold text-[#6B6B7B] uppercase tracking-wider">Phone Number *</label>
                     <input
                       type="tel"
                       required
                       placeholder=""
-                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all"
+                      className="w-full bg-[#FDF8F0] border border-[#E8DFD0] rounded-xl py-2.5 px-4 text-sm text-[#1B2A3D] placeholder-slate-400 focus:outline-none focus:border-[#C8923C] focus:ring-1 focus:ring-[#C8923C] transition-all"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
@@ -657,20 +495,20 @@ export default function ServiceDetail({ params }: PageProps) {
                   {/* Date & Time Grid */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Date *</label>
+                      <label className="text-xs font-bold text-[#6B6B7B] uppercase tracking-wider">Date *</label>
                       <input
                         type="date"
                         required
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#d81b47] transition-all"
+                        className="w-full bg-[#FDF8F0] border border-[#E8DFD0] rounded-xl py-2.5 px-3 text-xs sm:text-sm text-[#1B2A3D] focus:outline-none focus:border-[#C8923C] transition-all"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Pref. Time</label>
+                      <label className="text-xs font-bold text-[#6B6B7B] uppercase tracking-wider">Pref. Time</label>
                       <input
                         type="time"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#d81b47] transition-all"
+                        className="w-full bg-[#FDF8F0] border border-[#E8DFD0] rounded-xl py-2.5 px-3 text-xs sm:text-sm text-[#1B2A3D] focus:outline-none focus:border-[#C8923C] transition-all"
                         value={formData.time}
                         onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                       />
@@ -679,11 +517,11 @@ export default function ServiceDetail({ params }: PageProps) {
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Additional Notes</label>
+                    <label className="text-xs font-bold text-[#6B6B7B] uppercase tracking-wider">Additional Notes</label>
                     <textarea
                       rows={3}
                       placeholder="Describe any symptoms or requests..."
-                      className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#d81b47] focus:ring-1 focus:ring-[#d81b47] transition-all resize-none"
+                      className="w-full bg-[#FDF8F0] border border-[#E8DFD0] rounded-xl py-2.5 px-4 text-sm text-[#1B2A3D] placeholder-slate-400 focus:outline-none focus:border-[#C8923C] focus:ring-1 focus:ring-[#C8923C] transition-all resize-none"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
@@ -691,26 +529,29 @@ export default function ServiceDetail({ params }: PageProps) {
 
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#d81b47] hover:bg-[#b01338] text-white font-bold text-sm tracking-wide rounded-lg shadow-sm hover:shadow transition-all duration-300 select-none cursor-pointer"
+                    className="w-full py-3 text-white font-bold text-sm tracking-wide rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 select-none cursor-pointer"
+                    style={{
+                      background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)',
+                    }}
                   >
                     Confirm Booking
                   </button>
                 </form>
               ) : (
                 <div className="py-8 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mb-6 border border-emerald-100 shadow-inner">
+                  <div className="w-16 h-16 bg-[#FDF8F0] rounded-full flex items-center justify-center text-[#C8923C] mb-6 border border-[#E8DFD0] shadow-inner">
                     <CheckCircle size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1e2f41] mb-2">Booking Confirmed!</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed max-w-xs mb-8">
-                    Thank you, <span className="font-semibold text-slate-700">{formData.name}</span>. Our representative will contact you shortly on <span className="font-semibold text-slate-700">{formData.phone}</span> to confirm your appointment.
+                  <h3 className="text-2xl font-bold text-[#1B2A3D] mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>Booking Confirmed!</h3>
+                  <p className="text-sm text-[#6B6B7B] leading-relaxed max-w-xs mb-8">
+                    Thank you, <span className="font-semibold text-[#1B2A3D]">{formData.name}</span>. Our representative will contact you shortly on <span className="font-semibold text-[#1B2A3D]">{formData.phone}</span> to confirm your appointment.
                   </p>
                   <button
                     onClick={() => {
                       setIsBooked(false);
                       setFormData({ name: '', phone: '', date: '', time: '', message: '' });
                     }}
-                    className="py-2.5 px-6 border border-slate-200 hover:bg-slate-50 text-slate-600 rounded-lg text-sm font-semibold transition-colors"
+                    className="py-2.5 px-6 border border-[#E8DFD0] hover:bg-[#FDF8F0]/50 text-[#C8923C] rounded-xl text-sm font-semibold transition-colors"
                   >
                     Book Another
                   </button>

@@ -1,62 +1,61 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-heading: var(--font-outfit);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
-  --color-primary: oklch(0.348 0.108 254.691);
-  --color-primary-foreground: oklch(0.985 0 0);
-  --color-secondary: oklch(0.644 0.138 258.858);
-  --color-secondary-foreground: oklch(0.985 0 0);
-  --color-accent: oklch(0.488 0.243 264.376);
-  --color-accent-foreground: oklch(0.985 0 0);
-  --color-background: oklch(0.98 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-muted: oklch(0.922 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-border: oklch(0.9 0 0);
-  --radius: 0.5rem;
+
+  /* Gold-centric luxury palette */
+  --color-gold: #C8923C;
+  --color-gold-light: #D4A853;
+  --color-gold-dark: #A67830;
+  --color-gold-50: #FDF8F0;
+  --color-gold-100: #F9EDD8;
+  --color-gold-200: #F0D9AE;
+  --color-cream: #FDF8F0;
+  --color-navy: #1B2A3D;
+  --color-navy-light: #243649;
+  --color-navy-dark: #111D2B;
+
+  --color-primary: #C8923C;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #1B2A3D;
+  --color-secondary-foreground: #FFFFFF;
+  --color-accent: #D4A853;
+  --color-accent-foreground: #FFFFFF;
+  --color-background: #FFFFFF;
+  --color-foreground: #1a1a2e;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1a1a2e;
+  --color-muted: #F5F0E8;
+  --color-muted-foreground: #6B6B7B;
+  --color-border: #E8DFD0;
+  --radius: 0.625rem;
 }
 
 :root {
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.348 0.108 254.691);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.644 0.138 258.858);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.922 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.488 0.243 264.376);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.348 0.108 254.691);
-  --chart-1: oklch(0.348 0.108 254.691);
-  --chart-2: oklch(0.644 0.138 258.858);
-  --chart-3: oklch(0.488 0.243 264.376);
-  --chart-4: oklch(0.77 0 0);
-  --chart-5: oklch(0.556 0 0);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.348 0.108 254.691);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.488 0.243 264.376);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.348 0.108 254.691);
+  --background: #FFFFFF;
+  --foreground: #1a1a2e;
+  --card: #FFFFFF;
+  --card-foreground: #1a1a2e;
+  --popover: #FFFFFF;
+  --popover-foreground: #1a1a2e;
+  --primary: #C8923C;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1B2A3D;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F0E8;
+  --muted-foreground: #6B6B7B;
+  --accent: #D4A853;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E8DFD0;
+  --input: #E8DFD0;
+  --ring: #C8923C;
+  --radius: 0.625rem;
 }
 
 @layer base {
@@ -66,9 +65,182 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter);
   }
 
   html {
-    @apply font-sans;
+    scroll-behavior: smooth;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-outfit);
+  }
+}
+
+/* ─── Custom Animations ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-gold {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 146, 60, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 15px rgba(200, 146, 60, 0);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotted-move {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* ─── Dotted Pattern ─── */
+.dotted-pattern {
+  background-image: radial-gradient(circle, #C8923C 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* ─── Gold Gradient Text ─── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C8923C 0%, #D4A853 50%, #A67830 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Gold Gradient Background ─── */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C8923C 0%, #D4A853 40%, #C8923C 100%);
+}
+
+/* ─── Card Hover Lift ─── */
+.card-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(200, 146, 60, 0.15);
+}
+
+/* ─── Image Zoom on Hover ─── */
+.img-zoom-hover {
+  overflow: hidden;
+}
+
+.img-zoom-hover img {
+  transition: transform 0.5s ease;
+}
+
+.img-zoom-hover:hover img {
+  transform: scale(1.08);
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8923C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A67830;
 }
