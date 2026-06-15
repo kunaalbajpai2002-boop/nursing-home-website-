@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Calendar, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -66,10 +66,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'bg-white/98 shadow-lg shadow-black/5 backdrop-blur-md'
-        : 'bg-white'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-white/98 shadow-lg shadow-black/5 backdrop-blur-md'
+          : 'bg-white'
+      }`}
       style={{ height: '90px' }}
     >
       <div className="max-w-[1600px] mx-auto h-full flex items-center justify-between px-4 sm:px-6 lg:px-12">
@@ -77,7 +78,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <img
             src="/LOGO.png.jpeg"
-            alt="CareHub Nursing Home Logo"
+            alt="Aggarwal Nursing Home Logo"
             className="h-14 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
           />
           <div className="hidden sm:flex flex-col">
@@ -155,12 +156,12 @@ export default function Header() {
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                   <img
                     src="/LOGO.png.jpeg"
-                    alt="CareHub Nursing Home Logo"
+                    alt="Aggarwal Nursing Home Logo"
                     className="h-11 w-auto object-contain rounded-md"
                   />
                   <div className="flex flex-col">
                     <span className="font-bold text-[#1B2A3D] text-base leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                      CareHub
+                      Aggarwal
                     </span>
                     <span className="text-[10px] text-[#C8923C] font-semibold tracking-wider uppercase leading-none">
                       Nursing Home
