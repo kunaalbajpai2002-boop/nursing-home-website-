@@ -5,34 +5,40 @@ import Link from 'next/link';
 
 const doctors = [
   {
+    id: '01',
     name: 'Dr. Aditya Aggarwal',
-    qualification: 'MBBS, MS (General Surgery)',
-    designation: 'Senior Consultant & Director',
-    experience: 'More than 20 years of experience',
-    hospital: 'CareHub Nursing Home, Delhi',
-    specialization: 'General Surgery, Laparoscopic Surgery, Emergency Medicine & Critical Care',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=500&h=600',
+    qualification: 'MBBS, MD (Pediatrics & Neonatology Fellowship)',
+    designation: 'Sr. Consultant Pediatrician & Child Specialist',
+    experience: 'Ex SR Safdarjung Hospital, Ex Asst. Professor SAIMS, Hapur, More than 15 years of experience',
+    hospital: 'Aggarwal Nursing Home, Delhi',
+    specialization: 'Pediatrics, Neonatology Care, Vaccination & Childhood Nutrition Specialist',
+    image: '/aditya.png',
+    description: 'Dr. Aditya Aggarwal is a renowned medical practitioner who has been serving the community with dedication and expertise for over 15 years. Visit ',
+    website: 'https://dradityaaggarwal.com',
   },
   {
+    id: '02',
     name: 'Dr. Manju Aggarwal',
-    qualification: 'MBBS, MS (Obs & Gynae)',
-    designation: 'Sr. Consultant & Unit Head',
-    experience: 'More than 18 years of experience',
-    hospital: 'CareHub Nursing Home, Delhi',
-    specialization: 'Obstetrics & Gynaecology, High-Risk Pregnancy, Maternity Care',
-    image: 'https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=500&h=600',
+    qualification: 'MBBS, PGDMCH',
+    designation: 'Director',
+    experience: ' Ex Medical Officer, Kasturba Hospital ,More than 18 years of experience ',
+    hospital: 'Aggarwal Nursing Home, Delhi',
+    specialization: 'Ultrasonologist, Obstetrics & Gynaecology, High-Risk Pregnancy, Maternity Care',
+    image: '/manju ji .jpeg',
+    description: 'Dr. Manju Aggarwal is a distinguished senior gynaecologist and obstetrician unit head with over 18 years of clinical excellence, specializing in high-risk pregnancy care.',
   },
   {
+    id: '03',
     name: 'Dr. Sonali Aggarwal',
-    qualification: 'MBBS, MS (Obs & Gynae)',
-    designation: 'Consultant Obstetrician & Gynaecologist',
-    experience: 'More than 12 years of experience',
-    hospital: 'CareHub Nursing Home, Delhi',
-    specialization: 'Gynaecology, Obstetrics Care, Infertility & Women\'s Wellness Specialist',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=500&h=600',
+    qualification: 'MBBS & MD (KGMC Lucknow)',
+    designation: 'Gynaecology & Obstetrics, Infertility Specialist',
+    experience: 'Ex SR KGMC, SRHC Hospital, Narela DDU Delhi, More than 12 years of experience',
+    hospital: 'Aggarwal Nursing Home, Delhi',
+    specialization: 'Ultrasonologist,Gynaecology, Obstetrics Care, Infertility & Women\'s Wellness Specialist',
+    image: '/sonali ji_cropped.jpeg',
+    description: 'Dr. Sonali Aggarwal is a dynamic and dedicated obstetrician and gynaecologist with over 12 years of expertise in women\'s wellness and adolescent care.',
   },
 ];
-
 export default function DoctorsSection() {
   return (
     <section className="py-16 lg:py-20 bg-white relative overflow-hidden" id="doctors">
@@ -104,8 +110,22 @@ export default function DoctorsSection() {
                     {doctor.name}
                   </h3>
 
-                  <p className="text-sm font-semibold text-[#C8923C] mb-4">
+                  <p className="text-sm font-semibold text-[#C8923C] mb-2">
                     {doctor.qualification}
+                  </p>
+
+                  <p className="text-sm text-[#6B6B7B] mb-5 leading-relaxed min-h-[72px]">
+                    {doctor.description}
+                    {doctor.website && (
+                      <a
+                        href={doctor.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#C8923C] hover:underline font-semibold inline-flex items-center gap-0.5"
+                      >
+                        {doctor.website.replace('https://', '')}
+                      </a>
+                    )}
                   </p>
 
                   <div className="space-y-2.5 mb-6 text-left">
@@ -130,7 +150,7 @@ export default function DoctorsSection() {
                   </p>
 
                   <Link
-                    href={`/doctors`}
+                    href={`/doctors/${doctor.id}`}
                     className="inline-flex items-center justify-center w-full px-7 py-3 text-sm font-bold text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#C8923C]/25 hover:scale-[1.02] active:scale-98"
                     style={{
                       background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)',

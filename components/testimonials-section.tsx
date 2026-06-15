@@ -6,16 +6,16 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     name: 'Rajesh Kumar',
-    relation: 'Son of Patient',
+    relation: '',
     rating: 5,
-    text: 'The care my father received at CareHub was exceptional. The staff treated him with such dignity and compassion. The doctors were always available and kept us informed about every step of his treatment.',
+    text: 'The care my sister received at Aggarwal Nursing Home was exceptional. The staff treated her with such dignity and compassion. The doctors were always available and kept us informed about every step of his treatment.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150',
   },
   {
     name: 'Priya Sharma',
-    relation: 'Daughter of Patient',
+    relation: '',
     rating: 5,
-    text: 'I cannot thank the CareHub team enough for their incredible support during my mother\'s recovery. The nursing staff was attentive, the facilities were top-notch, and the environment felt like home.',
+    text: 'I cannot thank the Aggarwal nursing Home team enough for their incredible support during my neice recovery. The nursing staff was attentive, the facilities were top-notch, and the environment felt like home.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150',
   },
   {

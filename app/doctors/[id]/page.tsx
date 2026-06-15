@@ -32,42 +32,42 @@ interface DoctorInfo {
 const doctorsData: Record<string, DoctorInfo> = {
   '01': {
     name: 'Dr. Aditya Aggarwal',
-    designation: 'Senior Consultant & Director',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MD (Internal Medicine)',
-    experience: '35+ Years of Clinical Excellence',
-    bio: 'Dr. Aditya Aggarwal is a legendary physician with over three and a half decades of experience in internal medicine and critical care. As the Director of CareHub Nursing Home, he has dedicated his life to senior health management, geriatric rehabilitation, and multi-system chronic disease treatments.',
+    designation: 'Sr. Consultant Pediatrician & Child Specialist',
+    image: '/aditya.png',
+    qualifications: 'MBBS, MD (Pediatrics & Neonatology)',
+    experience: '15+ Years of Clinical Excellence',
+    bio: 'Dr. Aditya Aggarwal is a highly respected pediatrician and child specialist in Delhi with over 15 years of trusted experience. He specializes in comprehensive child healthcare, advanced pediatric treatments, immunization calendars, and neonatal intensive care. He is dedicated to supporting child development and ensuring the well-being of children from infancy through adolescence. You can learn more and book consultations directly via his website: [dradityaaggarwal.com](https://dradityaaggarwal.com).',
     expertise: [
-      'Geriatric Care & Senior Health Management',
-      'Chronic Disease Management (Diabetes, Hypertension)',
-      'Critical Care Medicine & Emergency Care',
-      'Cardiopulmonary Disease Consultations'
+      'General Pediatrics & Developmental Milestones',
+      'Neonatal Care & Newborn Resuscitation',
+      'Childhood Asthma & Allergy Control',
+      'Pediatric Vaccinations & Nutritional Guidance'
     ],
-    timings: 'Mon – Sat: 10:00 AM – 1:00 PM, 5:00 PM – 7:00 PM',
+    timings: 'Mon – Sat: 11:00 AM – 2:00 PM, 6:00 PM – 8:30 PM',
     languages: ['English', 'Hindi'],
     faqs: [
       {
-        q: 'Does Dr. Aditya Aggarwal treat emergency cases?',
-        a: 'Yes, as the Senior Consultant and Director, he oversees emergency admissions and handles critical internal medicine referrals.'
+        q: 'Does Dr. Aditya Aggarwal offer online consultation bookings?',
+        a: 'Yes, patients can book consults via the CareHub portal, or read more details directly on his personal site: dradityaaggarwal.com.'
       },
       {
-        q: 'How do I schedule a follow-up consultation?',
-        a: 'You can book through the online portal, or contact  front desk directly. Regular follow-ups are typically scheduled on weekday mornings.'
+        q: 'What age groups does Dr. Aditya Aggarwal treat?',
+        a: 'He provides comprehensive healthcare services for newborns, infants, toddlers, children, and young adolescents up to 18 years of age.'
       }
     ]
   },
   '02': {
     name: 'Dr. Manju Aggarwal',
-    designation: 'Gynaecologist & Obstetrician',
-    image: 'https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, PCDMCH(Obstetrics & Gynaecology)',
-    experience: '30+ Years of Dedication',
-    bio: 'Dr. Manju Aggarwal is a leading gynaecologist and fertility expert specializing in women\'s health throughout all life stages. Her compassionate approach to reproductive health, post-menopausal care, and geriatric gynaecology has made her a highly trusted healthcare professional in the region.',
+    designation: 'Sr. Consultant & Unit Head (Obs & Gynae)',
+    image: '/manju ji .jpeg',
+    qualifications: 'MBBS, MS (Obs & Gynae)',
+    experience: '18+ Years of Clinical Excellence',
+    bio: 'Dr. Manju Aggarwal is a distinguished senior consultant and unit head of Obstetrics and Gynaecology with over 18 years of clinical excellence. Specialized in high-risk pregnancy management and maternity care, she provides comprehensive, compassionate care to women at all stages of life, from adolescent health to menopausal support.',
     expertise: [
       'High-Risk Pregnancy Care & Deliveries',
-      'Infertility & Reproductive Health Services',
-      'Menopause Management & Hormonal Therapy',
-      'Geriatric Gynaecology & Preventative Care'
+      'Obstetric Emergencies & Maternity Services',
+      'Infertility Evaluation & Reproductive Health',
+      'Geriatric Gynaecology & Menopause Support'
     ],
     timings: 'Mon – Sat: 11:00 AM – 2:00 PM, 6:00 PM – 8:00 PM',
     languages: ['English', 'Hindi'],
@@ -84,27 +84,27 @@ const doctorsData: Record<string, DoctorInfo> = {
   },
   '03': {
     name: 'Dr. Sonali Aggarwal',
-    designation: 'Gynaecologist & Obstetrician',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=600',
-    qualifications: 'MBBS, MD (Obstetrics & Gynaecology)',
-    experience: '12+ Years of Expertise',
-    bio: 'Dr. Sonali Aggarwal is a dynamic gynaecologist committed to preventive cardiology and advanced non-invasive cardiac diagnostics. He is dedicated to helping patients prevent, manage, and recover from complex cardiovascular conditions through lifestyle modifications and modern medical treatments.',
+    designation: 'Consultant Obstetrician & Gynaecologist',
+    image: '/sonali ji_cropped.jpeg',
+    qualifications: 'MBBS, MS (Obs & Gynae)',
+    experience: '12+ Years of Clinical Excellence',
+    bio: 'Dr. Sonali Aggarwal is a dynamic and dedicated gynaecologist and obstetrician with over 12 years of expertise. Specializing in high-risk pregnancies, adolescent gynaecological health, and women\'s wellness, she is committed to providing comprehensive healthcare services. Dr. Sonali takes a holistic and supportive approach to treatment, empowering women through education and highly personalized medical care.',
     expertise: [
-      'Echocardiography (2D/3D Echo) & Color Doppler',
-      'Treadmill Testing (TMT) & Stress Assays',
-      'Preventive Cardiology & Hypertension Control',
-      'Heart Failure Management & Rehab Programs'
+      'Obstetrics Care & High-Risk Pregnancies',
+      'Adolescent Gynaecological Care & PCOD/PCOS',
+      'Infertility & Reproductive Endocrinology',
+      'Preventative Health & Women\'s Wellness'
     ],
-    timings: 'Mon – Sat: 9:00 AM – 11:00 AM, 4:00 PM – 6:00 PM',
+    timings: 'Mon – Sat: 10:00 AM – 2:00 PM, 5:00 PM – 7:00 PM',
     languages: ['English', 'Hindi'],
     faqs: [
       {
-        q: 'What tests does Dr. Sonali Aggarwal perform in-house?',
-        a: 'He performs Echocardiography (Echo), Treadmill Tests (TMT), Holter Monitoring, and ambulatory blood pressure evaluations directly in our diagnostic wing.'
+        q: 'What services does Dr. Sonali Aggarwal provide for high-risk pregnancy?',
+        a: 'Dr. Sonali offers personalized prenatal monitoring, regular screenings, advanced ultrasound coordination, and comprehensive delivery plans tailored to safeguard both mother and child.'
       },
       {
-        q: 'When should I consult a cardiologist?',
-        a: 'Consult if you experience chest pain, unexplained shortness of breath, palpitations, dizziness, or if you have a strong family history of heart disease.'
+        q: 'How can I consult for PCOS or PCOD concerns?',
+        a: 'You can book a consultation during her regular timing. Dr. Sonali provides complete diagnostic tests, lifestyle counseling, and medical management options for PCOD/PCOS.'
       }
     ]
   },
@@ -139,6 +139,28 @@ const doctorsData: Record<string, DoctorInfo> = {
 interface PageProps {
   params: Promise<{ id: string }>;
 }
+
+// Helper to render markdown links as active HTML links
+const renderBioWithLinks = (text: string) => {
+  const parts = text.split(/(\[.*?\]\(.*?\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/\[(.*?)\]\((.*?)\)/);
+    if (match) {
+      return (
+        <a
+          key={index}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#C8923C] hover:underline font-semibold"
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return part;
+  });
+};
 
 export default function DoctorDetail({ params }: PageProps) {
   const resolvedParams = React.use(params);
@@ -361,7 +383,7 @@ export default function DoctorDetail({ params }: PageProps) {
                     Qualifications: <span className="text-slate-700 font-semibold">{doctor.qualifications}</span>
                   </p>
                   <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                    {doctor.bio}
+                    {renderBioWithLinks(doctor.bio)}
                   </p>
                 </div>
               </div>
