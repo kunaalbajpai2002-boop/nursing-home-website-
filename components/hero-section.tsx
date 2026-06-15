@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
+import DoctorCarousel from './doctor-carousel';
 
 export default function HeroSection() {
   return (
@@ -31,7 +32,7 @@ export default function HeroSection() {
       <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-          {/* ─── Left Side — Content (45%) ─── */}
+          {/* ─── Left Side — Content ─── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -115,7 +116,7 @@ export default function HeroSection() {
               </div>
               <div className="w-px h-10 bg-[#E8DFD0]" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#C8923C]" style={{ fontFamily: 'Outfit, sans-serif' }}>50+</div>
+                <div className="text-2xl font-bold text-[#C8923C]" style={{ fontFamily: 'Outfit, sans-serif' }}>3</div>
                 <div className="text-xs text-[#6B6B7B] font-medium mt-1">Expert Doctors</div>
               </div>
               <div className="w-px h-10 bg-[#E8DFD0]" />
@@ -126,52 +127,38 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* ─── Right Side — Image with Decorative Elements (55%) ─── */}
+          {/* ─── Right Side — Doctor Carousel ─── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex items-center justify-center order-1 lg:order-2"
           >
-            {/* Gold geometric shape behind image */}
-            <div
-              className="absolute top-8 right-0 w-[85%] h-[90%] rounded-3xl -z-0"
-              style={{
-                background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 40%, #C8923C 100%)',
-                transform: 'rotate(3deg)',
-              }}
-            />
-
             {/* Soft circular pattern — top right */}
-            <div className="absolute -top-4 -right-4 w-28 h-28 border-2 border-[#C8923C]/15 rounded-full pointer-events-none" />
-            <div className="absolute -top-8 -right-8 w-40 h-40 border border-[#C8923C]/10 rounded-full pointer-events-none" />
+            <div className="absolute -top-4 -right-4 w-28 h-28 border-2 border-[#C8923C]/15 rounded-full pointer-events-none z-20" />
+            <div className="absolute -top-8 -right-8 w-40 h-40 border border-[#C8923C]/10 rounded-full pointer-events-none z-20" />
 
             {/* Dotted pattern — bottom left */}
-            <div className="absolute bottom-4 -left-2 w-24 h-24 opacity-[0.12] pointer-events-none dotted-pattern rounded-xl" />
+            <div className="absolute bottom-4 -left-2 w-24 h-24 opacity-[0.12] pointer-events-none dotted-pattern rounded-xl z-20" />
 
             {/* Medical cross decorative — top left */}
-            <div className="absolute top-12 left-4 z-10">
+            <div className="absolute top-12 left-4 z-20">
               <div className="w-10 h-10 relative">
                 <div className="absolute top-1/2 left-0 right-0 h-[3px] bg-[#C8923C]/25 rounded-full -translate-y-1/2" />
                 <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-[#C8923C]/25 rounded-full -translate-x-1/2" />
               </div>
             </div>
 
-            {/* Main Doctor Image */}
+            {/* Carousel — takes 520px max on desktop */}
             <div className="relative z-10 w-full max-w-[520px]">
-              <img
-                src="/hero-doctor.png"
-                alt="Expert Healthcare Professional"
-                className="w-full h-auto rounded-2xl object-cover shadow-2xl"
-                style={{ aspectRatio: '4/5' }}
-              />
+              <DoctorCarousel />
 
               {/* Floating Card — Bottom Left */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                className="absolute -bottom-4 -left-4 sm:left-4 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3 border border-[#E8DFD0]"
+                className="absolute -bottom-4 -left-4 sm:-left-8 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3 border border-[#E8DFD0] z-30"
               >
                 <div className="w-11 h-11 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -186,7 +173,7 @@ export default function HeroSection() {
             </div>
 
             {/* Small floating gold circle */}
-            <div className="absolute top-1/4 -left-6 w-6 h-6 rounded-full bg-[#C8923C]/20 animate-float pointer-events-none" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-1/4 -left-6 w-6 h-6 rounded-full bg-[#C8923C]/20 animate-float pointer-events-none z-20" style={{ animationDelay: '0.5s' }} />
           </motion.div>
         </div>
       </div>
