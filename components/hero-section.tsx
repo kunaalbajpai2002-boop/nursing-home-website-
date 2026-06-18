@@ -1,182 +1,217 @@
 'use client';
 
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
-import DoctorCarousel from './doctor-carousel';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const heroSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920&h=1080',
+    tagline: 'Premium Healthcare Experience',
+    title: 'Luxury Care & Exceptional Clinical Comfort',
+    description: 'Providing advanced medical care, maternity support, and child care within a luxury private hospital environment designed for absolute healing and peace of mind.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=1920&h=1080',
+    tagline: 'Expert Gynaecology Services',
+    title: 'Specialized Obstetrics & Women\'s Wellness',
+    description: 'Our world-class gynaecologists offer comprehensive prenatal screenings, gynaecological surgeries, IVF consultation, and personalized health checks.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=1920&h=1080',
+    title: 'Advanced Fetal Diagnostics & Ultrasound',
+    tagline: 'State-of-the-Art Imaging',
+    description: 'Equipped with the latest 3D/4D ultrasound technology and specialized diagnostic equipment to track development and ensure the safety of mother and baby.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1920&h=1080',
+    tagline: 'Compassionate Maternity Care',
+    title: 'A Warm & Safe Journey Into Motherhood',
+    description: 'Experience your delivery in elegant private rooms under the guidance of our gentle, expert obstetricians and specialized labor support teams.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1920&h=1080',
+    tagline: 'Mother & Newborn Support',
+    title: 'Pediatric Care & Specialized Neonatology',
+    description: 'Equipped with Level III NICU systems and expert child specialists on standby 24/7 to safeguard your newborn\'s health and nutrition.',
+  }
+];
+
+const AUTOPLAY_DELAY = 5000;
 
 export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for prev, 1 for next
+
+  const nextSlide = useCallback(() => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % heroSlides.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setDirection(-1);
+    setCurrent((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+  }, []);
+
+  const goToSlide = useCallback((index: number) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  }, [current]);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, AUTOPLAY_DELAY);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
   return (
-    <section className="relative w-full min-h-[90vh] bg-white overflow-hidden flex items-center" style={{ paddingTop: '90px' }}>
-      {/* ─── Background Decorative Elements ─── */}
-      {/* Large transparent gold circle — top right */}
-      <div
-        className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-[0.06] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #C8923C 0%, transparent 70%)' }}
-      />
-      {/* Medium gold circle — bottom left */}
-      <div
-        className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full opacity-[0.05] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #C8923C 0%, transparent 70%)' }}
-      />
-      {/* Dotted pattern — top left */}
-      <div
-        className="absolute top-40 left-10 w-32 h-32 opacity-[0.08] pointer-events-none dotted-pattern rounded-2xl"
-      />
-      {/* Small gold circle — mid left */}
-      <div className="absolute top-1/3 left-[8%] w-4 h-4 rounded-full bg-[#C8923C] opacity-20 animate-float pointer-events-none" />
-      {/* Small gold circle — bottom right */}
-      <div className="absolute bottom-1/4 right-[35%] w-3 h-3 rounded-full bg-[#D4A853] opacity-15 animate-float pointer-events-none" style={{ animationDelay: '1s' }} />
-
-      {/* ─── Main Content ─── */}
-      <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-12 py-8 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-          {/* ─── Left Side — Content ─── */}
+    <section className="relative w-full h-[100vh] min-h-[600px] overflow-hidden bg-[#1B2A3D]" id="hero-slider">
+      {/* Background Image Slideshow */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence initial={false} mode="popLayout">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="flex flex-col gap-7 lg:pr-8 order-2 lg:order-1"
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="absolute inset-0 w-full h-full"
           >
-            {/* Badge */}
+            <img
+              src={heroSlides[current].image}
+              alt={heroSlides[current].title}
+              className="w-full h-full object-cover scale-102 transform animate-pulse-slow"
+              style={{ filter: 'brightness(0.95)' }}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Dark Navy Overlay (60% Opacity) */}
+      <div className="absolute inset-0 bg-[#1B2A3D]/60 z-10 pointer-events-none" />
+
+      {/* Hero Content (Floating on Top) */}
+      <div className="relative z-20 max-w-[1600px] mx-auto w-full h-full px-4 sm:px-6 lg:px-12 flex items-center">
+        <div className="max-w-3xl flex flex-col gap-6 text-left">
+          {/* Tagline Badge */}
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key={`tagline-${current}`}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-[#C8923C] border border-[#C8923C]/20"
-                style={{ background: 'linear-gradient(135deg, #FDF8F0 0%, #F9EDD8 100%)' }}
+              <span
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-[#C8923C] border border-[#C8923C]/30 bg-[#1B2A3D]/40 backdrop-blur-md uppercase tracking-wider"
               >
-                <span className="w-2 h-2 rounded-full bg-[#C8923C] animate-pulse" />
-                Trusted Nursing Home Care
+                <span className="w-2 h-2 rounded-full bg-[#C8923C] animate-pulse-gold" />
+                {heroSlides[current].tagline}
               </span>
             </motion.div>
+          </AnimatePresence>
 
-            {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#1B2A3D] leading-[1.1] tracking-tight"
-              style={{ fontFamily: 'Outfit, sans-serif' }}
-            >
-              Compassionate{' '}
-              <span className="text-gold-gradient">Care</span>{' '}
-              for Every Stage of{' '}
-              <span className="text-gold-gradient">Life</span>
-            </motion.h1>
+          {/* Heading */}
+          <div className="overflow-hidden py-1">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={`title-${current}`}
+                initial={{ opacity: 0, y: 35 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -35 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight uppercase"
+                style={{ fontFamily: 'Outfit, sans-serif' }}
+              >
+                {heroSlides[current].title.split(' & ').map((part, index) => (
+                  <span key={index} className="block">
+                    {index > 0 ? '& ' : ''}
+                    <span className={index % 2 === 1 ? 'text-gold-gradient' : ''}>
+                      {part}
+                    </span>
+                  </span>
+                ))}
+              </motion.h1>
+            </AnimatePresence>
+          </div>
 
-            {/* Subheading */}
+          {/* Subheading */}
+          <AnimatePresence mode="wait">
             <motion.p
+              key={`desc-${current}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="text-base lg:text-lg text-[#6B6B7B] leading-relaxed max-w-xl"
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed max-w-xl"
             >
-              Providing advanced medical care, rehabilitation, elder care, maternity support, and personalized healthcare services with a patient-first approach.
+              {heroSlides[current].description}
             </motion.p>
+          </AnimatePresence>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.7 }}
-              className="flex flex-wrap gap-4 mt-2"
-            >
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2.5 px-8 py-4 text-sm font-bold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-[#C8923C]/25 hover:scale-105 active:scale-95"
-                style={{
-                  background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)',
-                }}
-              >
-                Book Appointment
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2.5 px-8 py-4 text-sm font-bold text-[#C8923C] bg-transparent border-2 border-[#C8923C]/30 rounded-full transition-all duration-300 hover:border-[#C8923C] hover:bg-[#FDF8F0] hover:scale-105 active:scale-95"
-              >
-                Our Services
-                <Play size={14} fill="#C8923C" />
-              </Link>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.9 }}
-              className="flex items-center gap-8 mt-4 pt-6 border-t border-[#E8DFD0]"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#C8923C]" style={{ fontFamily: 'Outfit, sans-serif' }}>15+</div>
-                <div className="text-xs text-[#6B6B7B] font-medium mt-1">Years Experience</div>
-              </div>
-              <div className="w-px h-10 bg-[#E8DFD0]" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#C8923C]" style={{ fontFamily: 'Outfit, sans-serif' }}>3</div>
-                <div className="text-xs text-[#6B6B7B] font-medium mt-1">Expert Doctors</div>
-              </div>
-              <div className="w-px h-10 bg-[#E8DFD0]" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#C8923C]" style={{ fontFamily: 'Outfit, sans-serif' }}>10K+</div>
-                <div className="text-xs text-[#6B6B7B] font-medium mt-1">Happy Patients</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* ─── Right Side — Doctor Carousel ─── */}
+          {/* Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex items-center justify-center order-1 lg:order-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap gap-4 mt-2"
           >
-            {/* Soft circular pattern — top right */}
-            <div className="absolute -top-4 -right-4 w-28 h-28 border-2 border-[#C8923C]/15 rounded-full pointer-events-none z-20" />
-            <div className="absolute -top-8 -right-8 w-40 h-40 border border-[#C8923C]/10 rounded-full pointer-events-none z-20" />
-
-            {/* Dotted pattern — bottom left */}
-            <div className="absolute bottom-4 -left-2 w-24 h-24 opacity-[0.12] pointer-events-none dotted-pattern rounded-xl z-20" />
-
-            {/* Medical cross decorative — top left */}
-            <div className="absolute top-12 left-4 z-20">
-              <div className="w-10 h-10 relative">
-                <div className="absolute top-1/2 left-0 right-0 h-[3px] bg-[#C8923C]/25 rounded-full -translate-y-1/2" />
-                <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-[#C8923C]/25 rounded-full -translate-x-1/2" />
-              </div>
-            </div>
-
-            {/* Carousel — takes 520px max on desktop */}
-            <div className="relative z-10 w-full max-w-[520px]">
-              <DoctorCarousel />
-
-              {/* Floating Card — Bottom Left */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.1 }}
-                className="absolute -bottom-4 -left-4 sm:-left-8 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3 border border-[#E8DFD0] z-30"
-              >
-                <div className="w-11 h-11 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-[#1B2A3D]" style={{ fontFamily: 'Outfit, sans-serif' }}>24/7 Care</div>
-                  <div className="text-xs text-[#6B6B7B]">Always Available</div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Small floating gold circle */}
-            <div className="absolute top-1/4 -left-6 w-6 h-6 rounded-full bg-[#C8923C]/20 animate-float pointer-events-none z-20" style={{ animationDelay: '0.5s' }} />
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2.5 px-8 py-4 text-sm font-bold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-[#C8923C]/25 hover:scale-105 active:scale-95"
+              style={{
+                background: 'linear-gradient(135deg, #C8923C 0%, #D4A853 100%)',
+              }}
+              id="hero-book-btn"
+            >
+              Book Appointment
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2.5 px-8 py-4 text-sm font-bold text-white bg-transparent border-2 border-white/20 rounded-full transition-all duration-300 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95"
+              id="hero-services-btn"
+            >
+              Our Services
+            </Link>
           </motion.div>
         </div>
       </div>
+
+      {/* Pagination Dot Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        {heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goToSlide(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
+              i === current
+                ? 'w-8 bg-[#C8923C] shadow-lg shadow-[#C8923C]/50'
+                : 'w-2.5 bg-white/40 hover:bg-white/70'
+            }`}
+            id={`hero-dot-${i}`}
+          />
+        ))}
+      </div>
+
+      {/* Navigation Arrow Controls */}
+      <button
+        onClick={prevSlide}
+        aria-label="Previous slide"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full border border-white/10 bg-[#1B2A3D]/40 backdrop-blur-sm text-white/80 hover:text-white hover:bg-[#1B2A3D]/80 flex items-center justify-center transition-all duration-300 hover:scale-105 hidden md:flex cursor-pointer"
+        id="hero-prev-arrow"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={nextSlide}
+        aria-label="Next slide"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full border border-white/10 bg-[#1B2A3D]/40 backdrop-blur-sm text-white/80 hover:text-white hover:bg-[#1B2A3D]/80 flex items-center justify-center transition-all duration-300 hover:scale-105 hidden md:flex cursor-pointer"
+        id="hero-next-arrow"
+      >
+        <ChevronRight size={24} />
+      </button>
     </section>
   );
 }

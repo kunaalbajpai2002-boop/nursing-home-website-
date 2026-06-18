@@ -3,24 +3,27 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
+import PediatricServicesSection from '@/components/pediatric-services-section';
 import ServicesSection from '@/components/services-section';
 import WhyChooseUsSection from '@/components/quick-info-section';
-import DoctorsSection from '@/components/doctors-section';
-import FacilitiesSection from '@/components/facilities-section';
 import TestimonialsSection from '@/components/testimonials-section';
 import CtaSection from '@/components/cta-section';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Header />
-      <HeroSection />
-      <ServicesSection />
-      <FacilitiesSection />
-      <WhyChooseUsSection />
-      <DoctorsSection />
-      <TestimonialsSection />
-      <CtaSection />
+      
+      {/* Homepage Structure */}
+      <main className="flex-grow">
+        <HeroSection />
+        <PediatricServicesSection />
+        <ServicesSection />
+        <WhyChooseUsSection />
+        <TestimonialsSection />
+        <CtaSection />
+      </main>
+
       <Footer />
     </div>
   );

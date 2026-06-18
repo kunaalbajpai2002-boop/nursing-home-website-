@@ -406,7 +406,7 @@ export default function ServiceDetail({ params }: PageProps) {
               </div>
 
               {/* Core Offerings / Facilities */}
-              <div>
+              {/* <div>
                 <h2 className="text-2xl font-bold text-[#1B2A3D] mb-6 flex items-center gap-2.5" style={{ fontFamily: 'Outfit, sans-serif' }}>
                   <Clock className="text-[#C8923C]" size={24} />
                   Facilities & Services
@@ -419,7 +419,7 @@ export default function ServiceDetail({ params }: PageProps) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Benefits */}
               <div>
