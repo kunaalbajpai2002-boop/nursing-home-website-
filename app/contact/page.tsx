@@ -121,7 +121,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-bold text-foreground">Email</h3>
                     <p className="text-muted-foreground">aggarwalnursinghomenarela@gmail.com</p>
-                    {/* <p className="text-muted-foreground">admissions@carehub.com</p> */}
+                    {/* <p className="text-muted-foreground">admissions@aggarwalnursinghome.com</p> */}
                   </div>
                 </div>
               </div>

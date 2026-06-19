@@ -48,7 +48,7 @@ const doctorsData: Record<string, DoctorInfo> = {
     faqs: [
       {
         q: 'Does Dr. Aditya Aggarwal offer online consultation bookings?',
-        a: 'Yes, patients can book consults via the CareHub portal, or read more details directly on his personal site: dradityaaggarwal.com.'
+        a: 'Yes, patients can book consults via the Aggarwal Nursing Home portal, or read more details directly on his personal site: dradityaaggarwal.com.'
       },
       {
         q: 'What age groups does Dr. Aditya Aggarwal treat?',

@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img
                 src="/LOGO.png.jpeg"
-                alt="CareHub Nursing Home Logo"
+                alt="Aggarwal Nursing Home Logo"
                 className="h-12 w-auto object-contain rounded-lg"
               />
               <div>

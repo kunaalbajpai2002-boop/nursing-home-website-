@@ -15,7 +15,7 @@ export default function Empanelment() {
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">
             <h2 className="text-3xl font-bold text-foreground mb-4">Insurance & Affiliation</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              CareHub is empaneled with major insurance providers and healthcare networks to ensure comprehensive coverage for our residents.
+              Aggarwal Nursing Home is empaneled with major insurance providers and healthcare networks to ensure comprehensive coverage for our residents.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
