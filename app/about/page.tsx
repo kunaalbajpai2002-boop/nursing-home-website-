@@ -32,53 +32,92 @@ export default function About() {
                 <span className="text-[#d81b47] uppercase font-bold text-sm tracking-wider">About Us</span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-extrabold text-[#1e2f41] mb-6 leading-tight tracking-tight uppercase">
-                A Trusted Healthcare Facility, Providing the Best Medical Services.
+                Welcome to Aggarwal Nursing Home, Narela
               </h1>
 
-              <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+              <div className="space-y-6 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  Aggarwal Nursing Home is a reputable healthcare institution with super-Specialities wards and cutting-edge medical equipment to ensure that all patients are treated completely, effectively, and on time.
+                  Aggarwal Nursing Home is one of the oldest and most trusted healthcare institutions in Narela, Delhi, dedicated to providing comprehensive care in Obstetrics, Gynaecology, Neonatology, and Paediatrics. Established by Dr. S.P. Aggarwal and Dr. Manju Aggarwal, the hospital has been serving the community for more than four decades with a commitment to compassionate, ethical, and patient-centered healthcare.
                 </p>
+                
+                <div className="pt-4 border-t border-slate-100">
+                  <h3 className="text-lg font-bold text-[#1e2f41] mb-3">
+                    Excellence in Women & Child Healthcare
+                  </h3>
+                  <p className="mb-4">
+                    At Aggarwal Nursing Home, we specialize in:
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mb-6">
+                    {[
+                      "Normal and Caesarean Deliveries",
+                      "High-Risk Pregnancy Management",
+                      "Gynaecological Surgeries",
+                      "Pregnancy Sonography & Ultrasound",
+                      "Antenatal and Postnatal Care",
+                      "Neonatal Intensive Care & Newborn Services",
+                      "Child Health & Vaccination Services",
+                      "Paediatric Consultations and Emergency Care",
+                      "Family Planning & Women’s Health Services"
+                    ].map((spec, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#d81b47] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-600 text-sm sm:text-base">{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <p>
-                  We have been providing medical and healthcare services for almost 100 years, treating generations of patients. Aggarwal Nursing Home is a center of excellence, with the greatest doctors and medical practitioners in the country. We offer the most up-to-date medical equipment and apparatus for rapid diagnosis and treatment of ailments.
-                </p>
-                <p>
-                  The availability of testing facilities on hospital grounds guarantees that patients receive immediate lab reports and findings, relieving them and providing a hassle-free experience.
-                </p>
-                <p>
-                  Aggarwal Nursing Home represents the pinnacle of trust and compassion. We treat our patients like family members. Our doctors, medical team, technicians, and other staff members are always accessible to assist patients in any manner possible. We ensure that our patients always receive the greatest medical care and services. We ensure that all of our patients leave with complete satisfaction and a grin on their faces.
-                </p>
-                <p>
-                  When it comes to infrastructure and hygiene, we make sure that hygiene is not compromised. Our hospital premises are Cleaned numerous times every day to eliminate the chance of disease transmission. Aggarwal Nursing Home features all The latest equipment, including digital X-ray and CT Scan, ECG, EEG, Echo, TMT, Holter and ABPM.
+                  Our experienced team of doctors and healthcare professionals combines medical expertise with personalized care to ensure the best outcomes for mothers, newborns, and children.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our Vision Section */}
+        {/* Our Legacy Section */}
         <section className="min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
           <div className="max-w-[1500px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Text Column */}
             <div className="lg:col-span-6 lg:order-1 order-2">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-1 bg-[#d81b47] rounded-full"></span>
-                <span className="text-[#d81b47] uppercase font-bold text-sm tracking-wider">Our Vision</span>
+                <span className="text-[#d81b47] uppercase font-bold text-sm tracking-wider">Our Legacy</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e2f41] mb-6 leading-tight tracking-tight uppercase">
-                To Be the Region's Most Trusted and Compassionate Care Provider.
+                Narela's Most Trusted and Compassionate Care Provider.
               </h2>
 
-              <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+              <div className="space-y-6 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  At Aggarwal Nursing Home , we envision a future where senior years are filled with joy, health, and dignity. We strive to pioneer new standards in geriatric care, incorporating advanced medical research, customized therapies, and a nurturing environment to ensure a fulfilling experience for our residents.
+                  Founded in the late 1970s and among the first hospitals in Narela to introduce modern obstetric and gynaecological services, Aggarwal Nursing Home has played a pioneering role in advancing women’s and child healthcare in the region. Under the leadership of Dr. Manju Aggarwal, the institution has continued its tradition of excellence, serving generations of families with dedication and compassion.
                 </p>
-                <p>
-                  We are dedicated to building a community that values the wisdom of elders, providing them with top-tier amenities and round-the-clock medical attention. Our goal is to expand our footprint while maintaining the boutique, high-touch quality of care that makes our residents feel at home.
-                </p>
-                <p>
-                  By cultivating strong bonds between our residents, their families, and our medical teams, we aspire to be a glowing beacon of reliability and modern medical compassion in the healthcare space.
-                </p>
+
+                <div className="pt-4 border-t border-slate-100">
+                  <h3 className="text-lg font-bold text-[#1e2f41] mb-3">
+                    Why Choose Aggarwal Nursing Home?
+                  </h3>
+                  <ul className="space-y-2 mb-6">
+                    {[
+                      "Over 40 years of trusted healthcare service",
+                      "Experienced Gynaecologists, Obstetricians, Paediatricians, and Neonatologists",
+                      "Modern Labour Room and Operation Theatre Facilities",
+                      "Advanced Ultrasound and Diagnostic Services",
+                      "24×7 Emergency and Maternity Care",
+                      "Personalized attention and affordable treatment",
+                      "Clean, patient-friendly environment with comprehensive inpatient and outpatient services"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-[#d81b47] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-slate-600 text-sm sm:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -121,15 +160,12 @@ export default function About() {
                 Delivering Compassionate Care & Advanced Health Services Daily.
               </h2>
 
-              <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+              <div className="space-y-6 text-slate-600 leading-relaxed text-sm sm:text-base">
                 <p>
-                  Our mission is to offer comprehensive healthcare services that address the physical, emotional, and social needs of seniors. Through our team of dedicated medical professionals and state-of-the-art facilities, we guarantee specialized care plans that promote independent living and recovery.
+                  To provide safe, affordable, and high-quality healthcare for women, newborns, and children while maintaining the highest standards of medical ethics, compassion, and patient satisfaction.
                 </p>
-                <p>
-                  We prioritize hygiene, nutrition, and mental wellness to foster an environment where residents can thrive. By collaborating closely with families, we ensure peace of mind and create a supportive system that feels like family.
-                </p>
-                <p>
-                  Every resident represents a sacred trust, and we work tirelessly to honor their dignity by upholding the highest ethical and professional standards in modern medical service delivery.
+                <p className="font-semibold text-[#1e2f41] border-l-4 border-[#d81b47] pl-4 italic">
+                  Aggarwal Nursing Home – Caring for Mothers, Newborns, and Children with Trust, Expertise, and Compassion Since 1977
                 </p>
               </div>
             </div>
