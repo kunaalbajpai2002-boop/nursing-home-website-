@@ -29,19 +29,19 @@ const gynaecologyServices = [
     title: 'Cosmetic Gynaecology',
     slug: 'cosmetic-gynaecology',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=400',
-    description: 'Aesthetic and functional procedures like vaginal rejuvenation and labiaplasty to enhance confidence and comfort.',
+    description: "Aesthetic and functional procedures like vaginal rejuvenation and labiaplasty to enhance women's intimate health and confidence.",
   },
   {
     title: 'Infertility Treatment',
     slug: 'infertility-treatment',
     image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=600&h=400',
-    description: 'Personalized evaluation and treatment plans for couples trying to conceive, including advanced reproductive care.',
+    description: 'Personalized evaluation and treatment plans for couples trying to conceive, including ovulation tracking and hormonal therapy.',
   },
   {
     title: 'Preventive Health Checks',
     slug: 'preventive-health-checks',
     image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=600&h=400',
-    description: 'Routine screenings like Pap smears, breast exams, and pelvic ultrasounds for early detection and wellness.',
+    description: 'Routine screenings like Pap smears, breast exams, and pelvic ultrasounds for early detection and better health outcomes.',
   },
 ];
 
