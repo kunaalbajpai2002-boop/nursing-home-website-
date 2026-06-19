@@ -47,7 +47,7 @@ const serviceData: Record<string, {
   'gynae-surgeries': {
     title: 'All Gynae Surgeries',
     tagline: 'Comprehensive surgical care for gynaecological conditions',
-    image: '/images/gynae/gynae-surgeries.jpg',
+    image: '/images/gynae/hospital-gynae-surgeries.png',
     description: 'We perform a wide spectrum of surgical procedures to treat conditions such as uterine fibroids, ovarian cysts, pelvic organ prolapse, and severe endometriosis. Our focus is on clinical excellence, absolute safety, and personalized post-operative recovery support.',
     facilities: [
       'Modern modular operation theaters with strict sterilization control',
@@ -156,7 +156,7 @@ const serviceData: Record<string, {
   'preventive-health-checks': {
     title: 'Preventive Health Checks',
     tagline: 'Proactive screenings to safeguard women\'s wellness at every age',
-    image: '/images/gynae/preventive-health.jpg',
+    image: '/images/gynae/hospital-preventive-health.png',
     description: 'Preventive care is key to maintaining women\'s wellness. Our specialized screening packages include routine physicals, Pap smears, breast screenings, and pelvic imaging to ensure early detection of any gynaecological conditions.',
     facilities: [
       'Comprehensive screening packages for different age groups',

@@ -14,7 +14,7 @@ const services = [
   {
     title: 'All Gynae Surgeries',
     slug: 'gynae-surgeries',
-    image: '/images/gynae/gynae-surgeries.jpg',
+    image: '/images/gynae/hospital-gynae-surgeries.png',
     description: 'Comprehensive surgical care for fibroids, cysts, endometriosis, and other gynaecological conditions using advanced techniques.',
   },
   {
@@ -38,7 +38,7 @@ const services = [
   {
     title: 'Preventive Health Checks',
     slug: 'preventive-health-checks',
-    image: '/images/gynae/preventive-health.jpg',
+    image: '/images/gynae/hospital-preventive-health.png',
     description: 'Routine screenings like Pap smears, breast exams, and pelvic ultrasounds for early detection and better health outcomes.',
   },
 ];

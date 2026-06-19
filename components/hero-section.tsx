@@ -13,7 +13,7 @@ const heroSlides = [
     description: 'Providing advanced medical care, maternity support, and child care within a luxury private hospital environment designed for absolute healing and peace of mind.',
   },
   {
-    image: '/images/hero/slide-2.jpg',
+    image: '',
     tagline: 'Expert Gynaecology Services',
     title: 'Specialized Obstetrics & Women\'s Wellness',
     description: 'Our world-class gynaecologists offer comprehensive prenatal screenings, gynaecological surgeries, IVF consultation, and personalized health checks.',
@@ -77,12 +77,14 @@ export default function HeroSection() {
             transition={{ duration: 1.2, ease: 'easeInOut' }}
             className="absolute inset-0 w-full h-full"
           >
-            <img
-              src={heroSlides[current].image}
-              alt={heroSlides[current].title}
-              className="w-full h-full object-cover scale-102 transform animate-pulse-slow"
-              style={{ filter: 'brightness(0.95)' }}
-            />
+            {heroSlides[current].image && (
+              <img
+                src={heroSlides[current].image}
+                alt={heroSlides[current].title}
+                className="w-full h-full object-cover scale-102 transform animate-pulse-slow"
+                style={{ filter: 'brightness(0.95)' }}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
