@@ -64,7 +64,7 @@ const cardVariants = {
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="py-16 lg:py-20 bg-[#FDF8F0] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-[#FDF8F0] relative overflow-hidden">
       {/* Background decorative elements */}
       <div
         className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full opacity-[0.04] pointer-events-none"
@@ -74,14 +74,14 @@ export default function WhyChooseUsSection() {
         className="absolute top-20 right-10 w-24 h-24 opacity-[0.06] pointer-events-none dotted-pattern rounded-xl"
       />
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <span className="inline-block text-sm font-semibold tracking-wider text-[#C8923C] uppercase mb-3">
             Our Commitment
