@@ -8,37 +8,37 @@ const pediatricServices = [
   {
     title: 'Pediatric Care',
     slug: 'pediatric-care',
-    image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/care.jpg',
     description: 'Comprehensive medical care for children of all ages — from routine check-ups to treatment of common childhood illnesses.',
   },
   {
     title: 'Newborn / Neonatal Care',
     slug: 'neonatal-care',
-    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/neonatal.jpg',
     description: 'Specialized care for newborns, including feeding support, jaundice management, and early development monitoring.',
   },
   {
     title: 'Vaccinations',
     slug: 'vaccinations',
-    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/vaccinations.jpg',
     description: 'Timely immunizations as per recommended schedules to protect children from preventable diseases.',
   },
   {
     title: 'Hospitalization for Pediatric Illnesses',
     slug: 'pediatric-hospitalization',
-    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/hospitalization.jpg',
     description: 'Expert care for children requiring admission due to serious infections, dehydration, or other acute conditions.',
   },
   {
     title: 'PICU / NICU Care',
     slug: 'nicu-care',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/nicu.jpg',
     description: 'Advanced care and coordination for critically ill newborns and children requiring intensive care and support.',
   },
   {
     title: 'Preventive Health Checks',
     slug: 'pediatric-health-checks',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/pediatrics/health-checks.jpg',
     description: 'Regular check-ups to monitor growth, development, and detect health issues early for timely intervention.',
   },
 ];

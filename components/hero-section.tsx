@@ -7,31 +7,31 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const heroSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920&h=1080',
+    image: '/images/hero/slide-1.jpg',
     tagline: 'Premium Healthcare Experience',
     title: 'Luxury Care & Exceptional Clinical Comfort',
     description: 'Providing advanced medical care, maternity support, and child care within a luxury private hospital environment designed for absolute healing and peace of mind.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=1920&h=1080',
+    image: '/images/hero/slide-2.jpg',
     tagline: 'Expert Gynaecology Services',
     title: 'Specialized Obstetrics & Women\'s Wellness',
     description: 'Our world-class gynaecologists offer comprehensive prenatal screenings, gynaecological surgeries, IVF consultation, and personalized health checks.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=1920&h=1080',
+    image: '/images/hero/slide-3.jpg',
     title: 'Advanced Fetal Diagnostics & Ultrasound',
     tagline: 'State-of-the-Art Imaging',
     description: 'Equipped with the latest 3D/4D ultrasound technology and specialized diagnostic equipment to track development and ensure the safety of mother and baby.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=1920&h=1080',
+    image: '/images/hero/slide-4.jpg',
     tagline: 'Compassionate Maternity Care',
     title: 'A Warm & Safe Journey Into Motherhood',
     description: 'Experience your delivery in elegant private rooms under the guidance of our gentle, expert obstetricians and specialized labor support teams.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1920&h=1080',
+    image: '/images/hero/slide-5.jpg',
     tagline: 'Mother & Newborn Support',
     title: 'Pediatric Care & Specialized Neonatology',
     description: 'Equipped with Level III NICU systems and expert child specialists on standby 24/7 to safeguard your newborn\'s health and nutrition.',

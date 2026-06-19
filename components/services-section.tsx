@@ -8,37 +8,37 @@ const services = [
   {
     title: 'All Kinds of Deliveries (Including High-Risk)',
     slug: 'deliveries',
-    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/deliveries.jpg',
     description: 'Safe and expert management of normal, cesarean, and high-risk deliveries to ensure the well-being of both mother and baby.',
   },
   {
     title: 'All Gynae Surgeries',
     slug: 'gynae-surgeries',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/gynae-surgeries.jpg',
     description: 'Comprehensive surgical care for fibroids, cysts, endometriosis, and other gynaecological conditions using advanced techniques.',
   },
   {
     title: 'Laparoscopic & Robotic Gynae Surgeries',
     slug: 'laparoscopic-robotic-surgeries',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/laparoscopic.jpg',
     description: 'Minimally invasive procedures for faster recovery, less pain, and minimal scarring in complex gynae cases.',
   },
   {
     title: 'Cosmetic Gynaecology',
     slug: 'cosmetic-gynaecology',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/cosmetic.jpg',
     description: "Aesthetic and functional procedures like vaginal rejuvenation and labiaplasty to enhance women's intimate health and confidence.",
   },
   {
     title: 'Infertility Treatment',
     slug: 'infertility-treatment',
-    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/infertility.jpg',
     description: 'Personalized evaluation and treatment plans for couples trying to conceive, including ovulation tracking and hormonal therapy.',
   },
   {
     title: 'Preventive Health Checks',
     slug: 'preventive-health-checks',
-    image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/gynae/preventive-health.jpg',
     description: 'Routine screenings like Pap smears, breast exams, and pelvic ultrasounds for early detection and better health outcomes.',
   },
 ];

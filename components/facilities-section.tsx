@@ -8,37 +8,37 @@ const facilities = [
   {
     title: 'ICU Care',
     slug: 'icu-care',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/icu-care.jpg',
     description: 'State-of-the-art intensive care unit equipped with advanced life support systems and 24/7 critical care monitoring by specialized teams.',
   },
   {
     title: 'Private Rooms',
     slug: 'private-rooms',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/private-rooms.jpg',
     description: 'Spacious, well-appointed private rooms designed for comfort and privacy, with modern amenities and a home-like atmosphere for recovery.',
   },
   {
     title: 'Emergency Services',
     slug: 'emergency-services',
-    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/emergency-services.jpg',
     description: 'Rapid-response emergency department operating around the clock with trained emergency physicians and life-saving equipment.',
   },
   {
     title: 'Diagnostics',
     slug: 'diagnostics',
-    image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/diagnostics.jpg',
     description: 'Comprehensive diagnostic services including advanced imaging, laboratory tests, and screening programs for accurate and timely results.',
   },
   {
     title: 'Pharmacy',
     slug: 'pharmacy',
-    image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/pharmacy.jpg',
     description: 'In-house pharmacy stocked with a wide range of medications, ensuring easy access to prescribed treatments for all patients.',
   },
   {
     title: 'Ambulance Services',
     slug: 'ambulance-services',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/images/facilities/ambulance-services.jpg',
     description: 'Fully equipped ambulance services available 24/7 for emergency patient transport with trained paramedics and life support systems.',
   },
 ];

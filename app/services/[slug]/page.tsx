@@ -19,7 +19,7 @@ const serviceData: Record<string, {
   deliveries: {
     title: 'All Kinds of Deliveries (Including High-Risk)',
     tagline: 'Safe, compassionate care for normal, cesarean, and high-risk deliveries',
-    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/deliveries.jpg',
     description: 'Our maternity unit provides state-of-the-art delivery services centering on safety, comfort, and immediate neonatal support. From normal physiological births to complex high-risk conditions requiring critical monitoring, our expert obstetricians and specialized teams are here for you 24/7.',
     facilities: [
       'State-of-the-art fetal heart rate monitoring and diagnostics',
@@ -47,7 +47,7 @@ const serviceData: Record<string, {
   'gynae-surgeries': {
     title: 'All Gynae Surgeries',
     tagline: 'Comprehensive surgical care for gynaecological conditions',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/gynae-surgeries.jpg',
     description: 'We perform a wide spectrum of surgical procedures to treat conditions such as uterine fibroids, ovarian cysts, pelvic organ prolapse, and severe endometriosis. Our focus is on clinical excellence, absolute safety, and personalized post-operative recovery support.',
     facilities: [
       'Modern modular operation theaters with strict sterilization control',
@@ -74,7 +74,7 @@ const serviceData: Record<string, {
   'laparoscopic-robotic-surgeries': {
     title: 'Laparoscopic & Robotic Gynae Surgeries',
     tagline: 'Minimally invasive procedures for faster recovery and minimal scarring',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/laparoscopic.jpg',
     description: 'We specialize in advanced minimally invasive keyhole procedures. Laparoscopic and robotic-assisted techniques allow us to perform complex surgeries through tiny incisions, offering superior precision and a much smoother recovery experience for our patients.',
     facilities: [
       'High-definition 3D laparoscopy towers and imaging equipment',
@@ -101,7 +101,7 @@ const serviceData: Record<string, {
   'cosmetic-gynaecology': {
     title: 'Cosmetic Gynaecology',
     tagline: 'Functional and aesthetic intimate treatments for enhanced wellness',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/cosmetic.jpg',
     description: 'Our cosmetic gynaecology clinic provides state-of-the-art treatments to address aesthetic and functional changes in intimate areas. We offer personalized, highly confidential care designed to restore tone, relieve discomfort, and boost self-confidence.',
     facilities: [
       'Private, highly confidential consulting and procedure suites',
@@ -128,7 +128,7 @@ const serviceData: Record<string, {
   'infertility-treatment': {
     title: 'Infertility Treatment',
     tagline: 'Comprehensive and compassionate support on your path to parenthood',
-    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/infertility.jpg',
     description: 'We offer compassionate, comprehensive fertility assessments and treatment options. Our clinic focuses on identifying the root cause of fertility issues and designing customized solutions, including ovulation induction and intrauterine insemination (IUI).',
     facilities: [
       'Comprehensive male and female fertility evaluation services',
@@ -156,7 +156,7 @@ const serviceData: Record<string, {
   'preventive-health-checks': {
     title: 'Preventive Health Checks',
     tagline: 'Proactive screenings to safeguard women\'s wellness at every age',
-    image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/gynae/preventive-health.jpg',
     description: 'Preventive care is key to maintaining women\'s wellness. Our specialized screening packages include routine physicals, Pap smears, breast screenings, and pelvic imaging to ensure early detection of any gynaecological conditions.',
     facilities: [
       'Comprehensive screening packages for different age groups',
@@ -186,7 +186,7 @@ const serviceData: Record<string, {
   'pediatric-care': {
     title: 'Pediatric Care',
     tagline: 'Comprehensive medical care for children of all ages',
-    image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/care.jpg',
     description: 'Our Pediatric Care division provides comprehensive healthcare for children from birth through adolescence. We offer preventive health services, routine developmental check-ups, immunizations, and prompt treatment for acute and chronic childhood illnesses.',
     facilities: [
       'Dedicated child-friendly consulting clinics',
@@ -209,7 +209,7 @@ const serviceData: Record<string, {
   'neonatal-care': {
     title: 'Newborn / Neonatal Care',
     tagline: 'Specialized medical care and nurturing for your newborn',
-    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/neonatal.jpg',
     description: 'Our Neonatal Care unit specializes in the medical management and support of newborns during their first critical weeks of life. We provide supportive care for feeding guidance, jaundice monitoring, growth checks, and early neurological milestones.',
     facilities: [
       'Modern infant warming and monitoring systems',
@@ -232,7 +232,7 @@ const serviceData: Record<string, {
   vaccinations: {
     title: 'Vaccinations',
     tagline: 'Protecting children from preventable diseases with timely immunizations',
-    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/vaccinations.jpg',
     description: 'We provide complete vaccination services following the latest guidelines from pediatric boards and health ministries. Timely immunizations are essential to protect your child from life-threatening preventable infectious diseases.',
     facilities: [
       'Safe and temperature-controlled vaccine storage',
@@ -255,7 +255,7 @@ const serviceData: Record<string, {
   'pediatric-hospitalization': {
     title: 'Hospitalization for Pediatric Illnesses',
     tagline: 'Comfortable, round-the-clock clinical care for acute childhood conditions',
-    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/hospitalization.jpg',
     description: 'Our dedicated pediatric hospitalization unit provides compassionate, round-the-clock clinical care for children requiring admission due to acute conditions like severe infections, dehydration, breathing difficulties, or recovery after pediatric procedures.',
     facilities: [
       'Comfortable pediatric inpatient rooms with parent stay-in facilities',
@@ -278,7 +278,7 @@ const serviceData: Record<string, {
   'nicu-care': {
     title: 'PICU / NICU Care',
     tagline: 'Advanced, intensive critical care for neonates and children',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/nicu.jpg',
     description: 'Our Neonatal Intensive Care Unit (NICU) and Pediatric Intensive Care Unit (PICU) provide advanced, life-saving critical care for premature babies, low birth weight infants, and children facing critical health situations. Backed by cutting-edge life support systems, our team is ready 24/7.',
     facilities: [
       'Advanced neonatal incubators and thermal care systems',
@@ -301,7 +301,7 @@ const serviceData: Record<string, {
   'pediatric-health-checks': {
     title: 'Preventive Health Checks',
     tagline: 'Proactive screenings to monitor growth, development, and wellness',
-    image: 'https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800&h=500',
+    image: '/images/pediatrics/health-checks.jpg',
     description: 'Routine check-ups are essential to monitor your child\'s physical growth, neurological milestones, and overall health. Our preventive checks help detect potential health issues early, allowing for timely, effective clinical intervention.',
     facilities: [
       'Complete physical examination and vitals screening',

@@ -9,21 +9,21 @@ const testimonials = [
     relation: '',
     rating: 5,
     text: 'The care my sister received at Aggarwal Nursing Home was exceptional. The staff treated her with such dignity and compassion. The doctors were always available and kept us informed about every step of his treatment.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150',
+    image: '/images/testimonials/user-1.jpg',
   },
   {
     name: 'Priya Sharma',
     relation: '',
     rating: 5,
     text: 'I cannot thank the Aggarwal nursing Home team enough for their incredible support during my neice recovery. The nursing staff was attentive, the facilities were top-notch, and the environment felt like home.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150',
+    image: '/images/testimonials/user-2.jpg',
   },
   {
     name: 'Amit Verma',
     relation: 'Patient',
     rating: 5,
     text: 'After my surgery, the post-operative care I received was outstanding. The physiotherapy team helped me regain mobility much faster than expected. Truly a world-class nursing facility.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150',
+    image: '/images/testimonials/user-3.jpg',
   },
 ];
 
