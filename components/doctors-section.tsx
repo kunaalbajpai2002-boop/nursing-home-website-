@@ -5,27 +5,15 @@ import Link from 'next/link';
 
 const doctors = [
   {
-    id: '01',
-    name: 'Dr. Aditya Aggarwal',
-    qualification: 'MBBS, MD (Pediatrics & Neonatology Fellowship)',
-    designation: 'Sr. Consultant Pediatrician & Child Specialist',
-    experience: 'Ex SR Safdarjung Hospital, Ex Asst. Professor SAIMS, Hapur, More than 15 years of experience',
-    hospital: 'Aggarwal Nursing Home, Delhi',
-    specialization: 'Pediatrics, Neonatology Care, Vaccination & Childhood Nutrition Specialist',
-    image: '/aditya.png',
-    description: 'Dr. Aditya Aggarwal is a renowned medical practitioner who has been serving the community with dedication and expertise for over 15 years. Visit ',
-    website: 'https://dradityaaggarwal.com',
-  },
-  {
     id: '02',
     name: 'Dr. Manju Aggarwal',
     qualification: 'MBBS, PGDMCH',
     designation: 'Director',
-    experience: ' Ex Medical Officer, Kasturba Hospital ,More than 18 years of experience ',
+    experience: ' Ex Medical Officer, Kasturba Hospital ,More than 48 years of experience ',
     hospital: 'Aggarwal Nursing Home, Delhi',
     specialization: 'Ultrasonologist, Obstetrics & Gynaecology, High-Risk Pregnancy, Maternity Care',
     image: '/manju ji .jpeg',
-    description: 'Dr. Manju Aggarwal is a distinguished senior gynaecologist and obstetrician unit head with over 18 years of clinical excellence, specializing in high-risk pregnancy care.',
+    description: 'Dr. Manju Aggarwal is the owner of Aggarwal Nursing Home with over 48 years of clinical excellence, specializing in high-risk pregnancy care.',
   },
   {
     id: '03',
@@ -37,6 +25,18 @@ const doctors = [
     specialization: 'Ultrasonologist,Gynaecology, Obstetrics Care, Infertility & Women\'s Wellness Specialist',
     image: '/sonali ji_cropped.jpeg',
     description: 'Dr. Sonali Aggarwal is a dynamic and dedicated obstetrician and gynaecologist with over 12 years of expertise in women\'s wellness and adolescent care.',
+  },
+  {
+    id: '01',
+    name: 'Dr. Aditya Aggarwal',
+    qualification: 'MBBS, MD (Pediatrics & Neonatology Fellowship)',
+    designation: 'Sr. Consultant Pediatrician & Child Specialist',
+    experience: 'Ex SR Safdarjung Hospital, Ex Asst. Professor SAIMS, Hapur, More than 15 years of experience',
+    hospital: 'Aggarwal Nursing Home, Delhi',
+    specialization: 'Pediatrics, Neonatology Care, Vaccination & Childhood Nutrition Specialist',
+    image: '/aditya.png',
+    description: 'Dr. Aditya Aggarwal is a renowned medical practitioner who has been serving the community with dedication and expertise for over 15 years. Visit ',
+    website: 'https://dradityaaggarwal.com',
   },
 ];
 export default function DoctorsSection() {

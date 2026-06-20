@@ -6,14 +6,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    id: '01',
-    name: 'Dr. Aditya Aggarwal',
-    specialty: 'Sr. Consultant Pediatrician & Child Specialist',
-    qualification: 'MBBS, MD (Pediatrics & Neonatology)',
-    image: '/aditya.png',
-    badge: 'Pediatrics & Neonatology',
-  },
-  {
     id: '02',
     name: 'Dr. Manju Aggarwal',
     specialty: 'Sr. Consultant & Unit Head — Obs & Gynae',
@@ -28,6 +20,14 @@ const slides = [
     qualification: 'MBBS & MD (KGMC Lucknow)',
     image: '/sonali ji_cropped.jpeg',
     badge: 'Gynaecology & Infertility',
+  },
+  {
+    id: '01',
+    name: 'Dr. Aditya Aggarwal',
+    specialty: 'Sr. Consultant Pediatrician & Child Specialist',
+    qualification: 'MBBS, MD (Pediatrics & Neonatology)',
+    image: '/aditya.png',
+    badge: 'Pediatrics & Neonatology',
   },
 ];
 

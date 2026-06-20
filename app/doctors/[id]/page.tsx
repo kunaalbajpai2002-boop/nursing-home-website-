@@ -61,8 +61,8 @@ const doctorsData: Record<string, DoctorInfo> = {
     designation: 'Sr. Consultant & Unit Head (Obs & Gynae)',
     image: '/manju ji .jpeg',
     qualifications: 'MBBS, MS (Obs & Gynae)',
-    experience: '18+ Years of Clinical Excellence',
-    bio: 'Dr. Manju Aggarwal is a distinguished senior consultant and unit head of Obstetrics and Gynaecology with over 18 years of clinical excellence. Specialized in high-risk pregnancy management and maternity care, she provides comprehensive, compassionate care to women at all stages of life, from adolescent health to menopausal support.',
+    experience: '48+ Years of Clinical Excellence',
+    bio: 'Dr. Manju Aggarwal is the owner of Aggarwal Nursing Home with over 48 years of clinical excellence, specializing in high-risk pregnancy care. Specialized in high-risk pregnancy management and maternity care, she provides comprehensive, compassionate care to women at all stages of life, from adolescent health to menopausal support.',
     expertise: [
       'High-Risk Pregnancy Care & Deliveries',
       'Obstetric Emergencies & Maternity Services',
