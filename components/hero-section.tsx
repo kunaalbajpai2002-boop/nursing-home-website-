@@ -9,31 +9,31 @@ const heroSlides = [
   {
     image: '/images/hero/slide-1.jpg',
     tagline: 'Premium Healthcare Experience',
-    title: 'Luxury Care & Exceptional Clinical Comfort',
-    description: 'Providing advanced medical care, maternity support, and child care within a luxury private hospital environment designed for absolute healing and peace of mind.',
+    title: 'Normal and Caesarean Deliveries',
+    description: 'Providing advanced medical care, maternity support, and child care within a private hospital environment designed for absolute healing and peace of mind.',
   },
   {
     image: '',
     tagline: 'Expert Gynaecology Services',
-    title: 'Specialized Obstetrics & Women\'s Wellness',
+    title: 'High-Risk Pregnancy Management',
     description: 'Our world-class gynaecologists offer comprehensive prenatal screenings, gynaecological surgeries, IVF consultation, and personalized health checks.',
   },
   {
     image: '/images/hero/slide-3.jpg',
-    title: 'Advanced Fetal Diagnostics & Ultrasound',
+    title: 'Pregnancy Sonography & Ultrasound',
     tagline: 'State-of-the-Art Imaging',
     description: 'Equipped with the latest 3D/4D ultrasound technology and specialized diagnostic equipment to track development and ensure the safety of mother and baby.',
   },
   {
     image: '/images/hero/slide-4.jpg',
     tagline: 'Compassionate Maternity Care',
-    title: 'A Warm & Safe Journey Into Motherhood',
+    title: 'Paediatric Consultations and Emergency Care',
     description: 'Experience your delivery in elegant private rooms under the guidance of our gentle, expert obstetricians and specialized labor support teams.',
   },
   {
     image: '/images/hero/slide-5.jpg',
     tagline: 'Mother & Newborn Support',
-    title: 'Pediatric Care & Specialized Neonatology',
+    title: 'Child Health & Vaccination Services',
     description: 'Equipped with Level III NICU systems and expert child specialists on standby 24/7 to safeguard your newborn\'s health and nutrition.',
   }
 ];
@@ -187,11 +187,10 @@ export default function HeroSection() {
             key={i}
             onClick={() => goToSlide(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
-              i === current
-                ? 'w-8 bg-[#C8923C] shadow-lg shadow-[#C8923C]/50'
-                : 'w-2.5 bg-white/40 hover:bg-white/70'
-            }`}
+            className={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${i === current
+              ? 'w-8 bg-[#C8923C] shadow-lg shadow-[#C8923C]/50'
+              : 'w-2.5 bg-white/40 hover:bg-white/70'
+              }`}
             id={`hero-dot-${i}`}
           />
         ))}

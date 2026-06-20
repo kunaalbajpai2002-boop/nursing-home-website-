@@ -17,8 +17,8 @@ export default function Home() {
       {/* Homepage Structure */}
       <main className="flex-grow">
         <HeroSection />
-        <PediatricServicesSection />
         <ServicesSection />
+        <PediatricServicesSection />
         <WhyChooseUsSection />
         <TestimonialsSection />
         <CtaSection />

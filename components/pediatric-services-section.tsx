@@ -64,7 +64,7 @@ const cardVariants = {
 
 export default function PediatricServicesSection() {
   return (
-    <section className="py-16 lg:py-20 bg-[#FDF8F0] relative overflow-hidden" id="pediatrics">
+    <section className="py-16 lg:py-20 bg-white relative overflow-hidden" id="pediatrics">
       {/* Background decorative */}
       <div
         className="absolute -top-20 -left-20 w-[350px] h-[350px] rounded-full opacity-[0.04] pointer-events-none"
@@ -108,7 +108,7 @@ export default function PediatricServicesSection() {
             <motion.div
               key={service.slug}
               variants={cardVariants}
-              className="group bg-white border border-[#E8DFD0] rounded-3xl overflow-hidden card-hover-lift flex flex-col"
+              className="group bg-[#FDF8F0] border border-[#E8DFD0] rounded-3xl overflow-hidden card-hover-lift flex flex-col"
             >
               {/* Card Image */}
               <div className="relative overflow-hidden rounded-t-3xl">
