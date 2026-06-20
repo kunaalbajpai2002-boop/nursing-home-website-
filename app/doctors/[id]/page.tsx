@@ -88,7 +88,7 @@ const doctorsData: Record<string, DoctorInfo> = {
     image: '/sonali ji_cropped.jpeg',
     qualifications: 'MBBS, MS (Obs & Gynae)',
     experience: '12+ Years of Clinical Excellence',
-    bio: 'Dr. Sonali Aggarwal is a dynamic and dedicated gynaecologist and obstetrician with over 12 years of expertise. Specializing in high-risk pregnancies, adolescent gynaecological health, and women\'s wellness, she is committed to providing comprehensive healthcare services. Dr. Sonali takes a holistic and supportive approach to treatment, empowering women through education and highly personalized medical care.',
+    bio: 'Dr. Sonali Aggarwal is a dynamic and trusted gynaecologist and obstetrician with over 12 years of expertise. Specializing in high-risk pregnancies, gynae surgeries. she is also  expertise in laparoscopic surgery and infertility treatment. she is committed to providing comprehensive healthcare services. Dr. Sonali takes a holistic and supportive approach to treatment, empowering women through education and highly personalized medical care.',
     expertise: [
       'Obstetrics Care & High-Risk Pregnancies',
       'Adolescent Gynaecological Care & PCOD/PCOS',
